@@ -1,7 +1,29 @@
 import React from "react";
+import { Article } from "../../../../types";
+import LatestNewsCard from "./LatestNewsCard";
+import Link from "next/link";
 
-function LatestFeed() {
-  return <div>LatestFeed</div>;
+type Props = {
+  articles: Article[];
+};
+
+function LatestFeed({ articles }: Props) {
+  return (
+    <>
+      <div className="mx-2 p-2">
+        <span className="font-semibold text-2xl text-primary-800 uppercase">
+          Latest News
+        </span>
+        <div className="my-4 flex flex-col gap-2">
+          {articles.map((article) => (
+            <Link href={`/article/${article.id}`}>
+              <LatestNewsCard key={article.id} article={article} />
+            </Link>
+          ))}
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default LatestFeed;
