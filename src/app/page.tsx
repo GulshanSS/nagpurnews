@@ -1,9 +1,33 @@
-import Image from 'next/image'
+import BannerFeed from "./components/Banner/BannerFeed";
+import {
+  getAllArticlesAsBanners,
+  getLatestArticles,
+  getMainFeedArticles,
+} from "./lib/article";
+import LatestFeed from "./components/Latest/LatestFeed";
+import Feed from "./components/main/Feed";
+import PromotionaryArticleFeed from "./components/PromotionaryArticle/PromotionaryArticleFeed";
+import { getAllPromotionaryArticlesAsBanners } from "./lib/promotionaryArticles";
 
-export default function Home() {
+export default async function Home() {
+  const { articles: articlesAsBanners } = await getAllArticlesAsBanners();
+  const { articles: latestArticles } = await getLatestArticles();
+  const { articles: mainFeedArticles } = await getMainFeedArticles();
+  const { promotionaryArticles: promotionaryArticlesAsBanner } =
+    await getAllPromotionaryArticlesAsBanners();
+
   return (
-    <main className="text-3xl font-bold">
-      <div>This is home page</div>
+    <main className="max-w-screen-xl flex flex-wrap mx-auto text-3xl mt-32 font-bold">
+      <div className="md:w-2/3">
+        <BannerFeed articles={articlesAsBanners} />
+        <Feed articles={mainFeedArticles} />
+      </div>
+      <div className="md:w-1/3">
+        <LatestFeed articles={latestArticles} />
+        <PromotionaryArticleFeed
+          promotionaryArticles={promotionaryArticlesAsBanner}
+        />
+      </div>
     </main>
-  )
+  );
 }
