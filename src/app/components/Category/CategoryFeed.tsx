@@ -1,6 +1,5 @@
 import React from "react";
 import { Category } from "../../../../types";
-import ArticleCard from "../shared/ArticleCard";
 import ArticleCardForCategory from "../shared/ArticleCardForCategory";
 import Link from "next/link";
 
@@ -16,8 +15,8 @@ export default function CategoryFeed({ category }: Props) {
       </div>
       <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-start gap-2">
         {category.article.map((article) => (
-          <Link href={`/article/${article.id}`}>
-            <ArticleCardForCategory key={article.id} article={article} />
+          <Link key={article.id} href={`/article/${article.id}`}>
+            <ArticleCardForCategory article={article} />
           </Link>
         ))}
       </div>
