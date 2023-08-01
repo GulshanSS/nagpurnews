@@ -41,22 +41,30 @@ export default function PromotionaryArticleCard({
             ></div>
           )}
           <div className="flex gap-2 my-2">
-            <SocialLinkForPromotionaryArticle
-              icon={<BsWhatsapp />}
-              link="WhatsAppLink"
-            />
-            <SocialLinkForPromotionaryArticle
-              icon={<BsInstagram />}
-              link="InstagramLink"
-            />
-            <SocialLinkForPromotionaryArticle
-              icon={<BsGlobe />}
-              link="WebsiteLink"
-            />
-            <SocialLinkForPromotionaryArticle
-              icon={<BsPhone />}
-              link="Contact Number"
-            />
+            {promotionaryArticle.whatsAppLink !== "" ? (
+              <SocialLinkForPromotionaryArticle
+                icon={<BsWhatsapp />}
+                link={promotionaryArticle.whatsAppLink}
+              />
+            ) : null}
+            {promotionaryArticle.instagramLink !== "" ? (
+              <SocialLinkForPromotionaryArticle
+                icon={<BsInstagram />}
+                link={promotionaryArticle.instagramLink}
+              />
+            ) : null}
+            {promotionaryArticle.websiteLink !== "" ? (
+              <SocialLinkForPromotionaryArticle
+                icon={<BsGlobe />}
+                link="WebsiteLink"
+              />
+            ) : null}
+            {promotionaryArticle.contact !== "" ? (
+              <SocialLinkForPromotionaryArticle
+                icon={<BsPhone />}
+                link={`tel:+91${promotionaryArticle.contact}`}
+              />
+            ) : null}
           </div>
         </div>
       </div>
