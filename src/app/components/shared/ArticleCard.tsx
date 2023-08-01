@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Article } from "../../../../types";
 import Link from "next/link";
@@ -12,7 +13,11 @@ export default function ArticleCard({ article }: Props) {
       <div className="flex flex-col md:px-2.5 py-2.5 md:py-0">
         {article.category &&
           article.category.map((category) => (
-            <Link className="mb-4" href={`/category/${category.id}`}>
+            <Link
+              key={category.id}
+              className="mb-4"
+              href={`/category/${category.id}`}
+            >
               <span
                 key={category.id}
                 className="w-fit text-lg px-2.5 text-primary-100 bg-widget-100/80 font-semibold uppercase rounded-r-full border-l-8 border-widget-100"
@@ -30,9 +35,6 @@ export default function ArticleCard({ article }: Props) {
             dangerouslySetInnerHTML={{ __html: article.content }}
           ></div>
         </Link>
-        <div className="pt-2 border-t border-primary-600">
-          share
-        </div>
       </div>
       {article.media[0].type.startsWith("image/") && (
         <img
