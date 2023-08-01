@@ -7,6 +7,7 @@ import { useState } from "react";
 import SocialLinkForPromotionaryArticle from "../shared/SocialLinkForPromotionaryArticle";
 import { BsFacebook, BsInstagram, BsTwitter, BsWhatsapp } from "react-icons/bs";
 import { BiSolidCategory } from "react-icons/bi";
+import { BsPeopleFill } from "react-icons/bs";
 import { Category } from "../../../../types";
 import Link from "next/link";
 
@@ -94,6 +95,19 @@ export default function Navbar({ categories }: Props) {
                   </li>
                 </Link>
               ))}
+            </ul>
+            <ul>
+              <Link href="/aboutus">
+                <li
+                  onClick={() => setOpen(!open)}
+                  className="px-4 py-1.5 flex items-center border-y border-primary-600"
+                >
+                  <span className="mr-2">
+                    <BsPeopleFill />
+                  </span>
+                  About Us
+                </li>
+              </Link>
             </ul>
           </ul>
           <ul className="flex flex-col justify-center items-center gap-2 border-t border-primary-600 bg-primary-900 py-4">
