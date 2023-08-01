@@ -17,7 +17,7 @@ function LatestFeed({ articles }: Props) {
         <div className="my-4 flex flex-col gap-2">
           {articles.map((article) => (
             <Link key={article.id} href={`/article/${article.id}`}>
-              <LatestNewsCard key={article.id} article={article} />
+              <LatestNewsCard article={article} />
             </Link>
           ))}
         </div>
