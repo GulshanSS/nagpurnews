@@ -16,7 +16,6 @@ export default function ExploreCategory({ categories }: Props) {
         {categories.map((category) => (
           <Link key={category.id} href={`/category/${category.id}`}>
             <div
-              key={category.id}
               className="uppercase text-[12px] px-2.5 hover:bg-primary-100 hover:text-primary-800 border-2 border-primary-100 rounded-md cursor-pointer"
             >
               {category.name}

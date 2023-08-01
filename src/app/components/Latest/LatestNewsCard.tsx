@@ -2,11 +2,10 @@ import React from "react";
 import { Article } from "../../../../types";
 
 type Props = {
-  key: number;
   article: Article;
 };
 
-export default function LatestNewsCard({ article, key }: Props) {
+export default function LatestNewsCard({ article }: Props) {
   return (
     <div className="min-w-80 flex justify-between items-center gap-2 shadow-md rounded-md p-2 cursor-pointer">
       <div className="flex flex-col">
@@ -14,7 +13,6 @@ export default function LatestNewsCard({ article, key }: Props) {
           {article.title}
         </span>
         <div
-          key={key}
           className="text-xs line-clamp-2 leading-4 font-thin text-primary-800 mt-2"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
