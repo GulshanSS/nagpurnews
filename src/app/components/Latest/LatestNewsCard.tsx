@@ -2,12 +2,16 @@ import React from "react";
 import { Article } from "../../../../types";
 
 type Props = {
+  key: number;
   article: Article;
 };
 
-export default function LatestNewsCard({ article }: Props) {
+export default function LatestNewsCard({ article, key }: Props) {
   return (
-    <div className="min-w-80 flex justify-between items-center gap-2 shadow-md rounded-md p-2 cursor-pointer">
+    <div
+      key={key}
+      className="min-w-80 flex justify-between items-center gap-2 shadow-md rounded-md p-2 cursor-pointer"
+    >
       <div className="flex flex-col">
         <span className="text-sm line-clamp-2 leading-4 font-semibold text-primary-800 border-b  border-primary-600">
           {article.title}
@@ -15,7 +19,7 @@ export default function LatestNewsCard({ article }: Props) {
         <div
           className="text-xs line-clamp-2 leading-4 font-thin text-primary-800 mt-2"
           dangerouslySetInnerHTML={{ __html: article.content }}
-        ></div>
+        />
       </div>
       {article.media[0].type.startsWith("image/") && (
         <img
