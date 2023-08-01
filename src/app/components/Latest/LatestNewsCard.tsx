@@ -8,15 +8,13 @@ type Props = {
 
 export default function LatestNewsCard({ article, key }: Props) {
   return (
-    <div
-      key={key}
-      className="min-w-80 flex justify-between items-center gap-2 shadow-md rounded-md p-2 cursor-pointer"
-    >
+    <div className="min-w-80 flex justify-between items-center gap-2 shadow-md rounded-md p-2 cursor-pointer">
       <div className="flex flex-col">
         <span className="text-sm line-clamp-2 leading-4 font-semibold text-primary-800 border-b  border-primary-600">
           {article.title}
         </span>
         <div
+          key={key}
           className="text-xs line-clamp-2 leading-4 font-thin text-primary-800 mt-2"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
