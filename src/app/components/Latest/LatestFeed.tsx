@@ -15,11 +15,11 @@ function LatestFeed({ articles }: Props) {
         </span>
         <div className="my-4 flex flex-col gap-2">
           {articles.map((article) => (
-            <Link key={article.id} href={`/article/${article.id}`}>
-              <div
-                key={article.id}
-                className="min-w-80 flex justify-between items-center gap-2 shadow-md rounded-md p-2 cursor-pointer"
-              >
+            <div
+              key={article.id}
+              className="min-w-80 flex justify-between items-center gap-2 shadow-md rounded-md p-2 cursor-pointer"
+            >
+              <Link href={`/article/${article.id}`}>
                 <div className="flex flex-col">
                   <span className="text-sm line-clamp-2 leading-4 font-semibold text-primary-800 border-b  border-primary-600">
                     {article.title}
@@ -44,8 +44,8 @@ function LatestFeed({ articles }: Props) {
                     src={article.media[0].key}
                   />
                 )}
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
       </div>
