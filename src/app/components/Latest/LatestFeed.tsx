@@ -15,9 +15,10 @@ function LatestFeed({ articles }: Props) {
           Latest News
         </span>
         <div className="my-4 flex flex-col gap-2">
-          {articles.map((article) => (
-            <LatestNewsCard key={article.id} article={article}/>
-          ))}
+          {articles &&
+            articles.map((article) => (
+              <LatestNewsCard key={article.id} article={article} />
+            ))}
         </div>
       </div>
     </>

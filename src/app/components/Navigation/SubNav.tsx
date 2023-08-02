@@ -17,13 +17,14 @@ export default async function SubNav() {
             <NavPill href="/" label="Home" icon={<HiHome />} />
           </ul>
           <ul className="flex flex-row overflow-x-auto scrollbar-hide">
-            {categories.map((category: Category) => (
-              <NavPill
-                key={category.id}
-                href={`/category/${category.id}`}
-                label={category.name}
-              />
-            ))}
+            {categories &&
+              categories.map((category: Category) => (
+                <NavPill
+                  key={category.id}
+                  href={`/category/${category.id}`}
+                  label={category.name}
+                />
+              ))}
           </ul>
         </div>
       </div>

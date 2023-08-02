@@ -13,12 +13,13 @@ export default function PromotionaryArticleFeed({
     <>
       <div className="mx-2 p-2">
         <div className="my-4 flex flex-col gap-2">
-          {promotionaryArticles.map((promotionaryArticle) => (
-            <PromotionaryArticleCard
-              key={promotionaryArticle.id}
-              promotionaryArticle={promotionaryArticle}
-            />
-          ))}
+          {promotionaryArticles &&
+            promotionaryArticles.map((promotionaryArticle) => (
+              <PromotionaryArticleCard
+                key={promotionaryArticle.id}
+                promotionaryArticle={promotionaryArticle}
+              />
+            ))}
         </div>
       </div>
     </>

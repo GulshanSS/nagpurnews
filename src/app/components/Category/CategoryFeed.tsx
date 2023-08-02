@@ -11,14 +11,15 @@ export default function CategoryFeed({ category }: Props) {
   const content = (
     <div className="mx-2 p-2 rounded-md mb-6">
       <div className="mb-6 font-semibold text-2xl text-primary-800 uppercase">
-        {category.name}
+        {category && category.name}
       </div>
       <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-start gap-2">
-        {category.article.map((article) => (
-          <Link key={article.id} href={`/article/${article.id}`}>
-            <ArticleCardForCategory article={article} />
-          </Link>
-        ))}
+        {category &&
+          category.article.map((article) => (
+            <Link key={article.id} href={`/article/${article.id}`}>
+              <ArticleCardForCategory article={article} />
+            </Link>
+          ))}
       </div>
     </div>
   );

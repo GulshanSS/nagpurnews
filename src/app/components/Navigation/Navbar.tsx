@@ -84,17 +84,18 @@ export default function Navbar({ categories }: Props) {
               Categories
             </li>
             <ul className="space-y-2 overflow-y-auto font-medium flex flex-col items-start gap-1 scrollbar-hide px-3 my-2">
-              {categories.map((category) => (
-                <Link key={category.id} href={`/category/${category.id}`}>
-                  <li
-                    key={category.id}
-                    onClick={() => setOpen(!open)}
-                    className="cursor-pointer px-2.5 py-1.5 text-sm text-primary-800 rounded-md bg-primary-100 border border-primary-600"
-                  >
-                    {category.name}
-                  </li>
-                </Link>
-              ))}
+              {categories &&
+                categories.map((category) => (
+                  <Link key={category.id} href={`/category/${category.id}`}>
+                    <li
+                      key={category.id}
+                      onClick={() => setOpen(!open)}
+                      className="cursor-pointer px-2.5 py-1.5 text-sm text-primary-800 rounded-md bg-primary-100 border border-primary-600"
+                    >
+                      {category.name}
+                    </li>
+                  </Link>
+                ))}
             </ul>
             <ul>
               <Link href="/aboutus">
