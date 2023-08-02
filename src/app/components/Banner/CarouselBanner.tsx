@@ -89,10 +89,7 @@ export default function CarouselBanner({ slides = [], heightVariant }: Props) {
           {slides.length > 0 &&
             slides[currentIndex].category.map((category) => (
               <Link key={category.id} href={`/category/${category.id}`}>
-                <span
-                  key={category.id}
-                  className="text-sm px-2 py-1 bg-widget-100 text-primary-50 font-medium uppercase rounded-full shadow-md"
-                >
+                <span className="text-sm px-2 py-1 bg-widget-100 text-primary-50 font-medium uppercase rounded-full shadow-md">
                   {category.name}
                 </span>
               </Link>
