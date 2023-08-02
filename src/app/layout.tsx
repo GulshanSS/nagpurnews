@@ -32,18 +32,16 @@ export default async function RootLayout({
 
   const { articles: latestArticles } = await latestArticlesData;
 
-  const { promotionaryArticles: promotionaryArticlesAsBanner } = await promotionaryArticlesData
-
+  const { promotionaryArticles: promotionaryArticlesAsBanner } =
+    await promotionaryArticlesData;
 
   return (
     <html lang="en">
       <body className={poppins.className}>
         <Navbar categories={categories} />
         <SubNav />
-        <main className="max-w-screen-xl flex flex-wrap mx-auto text-3xl mt-32 font-bold">
-          <div className="md:w-2/3">
-            {children}
-          </div>
+        <main className="max-w-screen-xl min-h-screen flex flex-wrap mx-auto text-3xl mt-32 font-bold">
+          <div className="md:w-2/3">{children}</div>
           <div className="md:w-1/3">
             <LatestFeed articles={latestArticles} />
             <PromotionaryArticleFeed
