@@ -8,7 +8,10 @@ type Props = {
   heightVariant: string;
 };
 
-export default function CarouselBanner({ slides = [], heightVariant }: Props) {
+export default function CarouselBanner({
+  slides = [] as Article[],
+  heightVariant,
+}: Props) {
   const variant: any = {
     small: "h-[100px]",
     large: "h-[500px]",

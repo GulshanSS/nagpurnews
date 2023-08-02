@@ -14,7 +14,7 @@ export default function BannerFeed({ articles }: Props) {
       <span className="font-semibold text-2xl text-primary-800 uppercase">
         Today's Special
       </span>
-      <CarouselBanner slides={articles} heightVariant="large" />
+      {articles && <CarouselBanner slides={articles} heightVariant="large" />}
     </div>
   );
 }
