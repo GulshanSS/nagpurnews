@@ -7,8 +7,8 @@ import {
 import Feed from "./components/main/Feed";
 
 export default async function Home() {
-  const articleAsBannerData = await getAllArticlesAsBanners();
-  const mainFeedArticlesData = await getMainFeedArticles();
+  const articleAsBannerData = getAllArticlesAsBanners();
+  const mainFeedArticlesData = getMainFeedArticles();
 
   const [{ articles: articlesAsBanners }, { articles: mainFeedArticles }] =
     await Promise.all([articleAsBannerData, mainFeedArticlesData]);
