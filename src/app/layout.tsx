@@ -22,18 +22,12 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const categoryData = getAllCategories();
+  const { categories } = await getAllCategories();
 
-  const latestArticlesData = getLatestArticles();
-
-  const promotionaryArticlesData = getAllPromotionaryArticlesAsBanners();
-
-  const { categories } = await categoryData;
-
-  const { articles: latestArticles } = await latestArticlesData;
+  const { articles: latestArticles } = await getLatestArticles();
 
   const { promotionaryArticles: promotionaryArticlesAsBanner } =
-    await promotionaryArticlesData;
+    await getAllPromotionaryArticlesAsBanners();
 
   return (
     <html lang="en">
