@@ -12,10 +12,19 @@ type Params = {
 };
 
 export default async function ArticlePage({ params: { articleId } }: Params) {
-  const { article } = await getArticleById(articleId);
-  const { articles: latestArticles } = await getLatestArticles();
-  const { promotionaryArticles: promotionaryArticlesAsBanner } =
-    await getAllPromotionaryArticlesAsBanners();
+  const articleData = getArticleById(articleId);
+  const latestArticlesData = getLatestArticles();
+  const promotionaryArticlesData = getAllPromotionaryArticlesAsBanners();
+
+  const [
+    { article },
+    { articles: latestArticles },
+    { promotionaryArticles: promotionaryArticlesAsBanner },
+  ] = await Promise.all([
+    articleData,
+    latestArticlesData,
+    promotionaryArticlesData,
+  ]);
   return (
     <>
       <main className="max-w-screen-xl min-h-screen flex flex-wrap mx-auto text-3xl mt-32 font-bold">

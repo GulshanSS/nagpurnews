@@ -1,3 +1,4 @@
+import { Article } from "../../../types";
 import AboutUsFeed from "../components/AboutUs/AboutUsFeed";
 import LatestFeed from "../components/Latest/LatestFeed";
 import PromotionaryArticleFeed from "../components/PromotionaryArticle/PromotionaryArticleFeed";
@@ -5,9 +6,13 @@ import { getLatestArticles } from "../lib/article";
 import { getAllPromotionaryArticlesAsBanners } from "../lib/promotionaryArticles";
 
 export default async function AboutUsPage() {
-  const { articles: latestArticles } = await getLatestArticles();
-  const { promotionaryArticles: promotionaryArticlesAsBanner } =
-    await getAllPromotionaryArticlesAsBanners();
+  const latestArticlesData = getLatestArticles();
+  const promotionaryArticlesData = getAllPromotionaryArticlesAsBanners();
+
+  const [
+    { articles: latestArticles },
+    { promotionaryArticles: promotionaryArticlesAsBanner },
+  ] = await Promise.all([latestArticlesData, promotionaryArticlesData]);
 
   return (
     <>

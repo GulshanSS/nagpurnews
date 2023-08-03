@@ -10,13 +10,9 @@ import PromotionaryArticleFeed from "./components/PromotionaryArticle/Promotiona
 import { getAllPromotionaryArticlesAsBanners } from "./lib/promotionaryArticles";
 
 export default async function Home() {
-  const latestArticlesData = getLatestArticles();
-  const promotionaryArticlesData = getAllPromotionaryArticlesAsBanners();
-
-  const { articles: latestArticles } = await latestArticlesData;
-
+  const { articles: latestArticles } = await getLatestArticles();
   const { promotionaryArticles: promotionaryArticlesAsBanner } =
-    await promotionaryArticlesData;
+    await getAllPromotionaryArticlesAsBanners();
 
   const { articles: articlesAsBanners } = await getAllArticlesAsBanners();
   const { articles: mainFeedArticles } = await getMainFeedArticles();

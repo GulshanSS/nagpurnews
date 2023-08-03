@@ -16,18 +16,27 @@ type Params = {
 };
 
 export default async function CategoryPage({ params: { categoryId } }: Params) {
-  const { categories: allCategories } = await getAllCategories();
-  const { category: categoryWithArticles } = await getAllArticlesForCategory(
-    categoryId
-  );
+  const categoriesData = getAllCategories();
+  const categoriesWithArticleData = getAllArticlesForCategory(categoryId);
+
+  const latestArticlesData = getLatestArticles();
+  const promotionaryArticlesData = getAllPromotionaryArticlesAsBanners();
+
+  const [
+    { categories: allCategories },
+    { category: categoryWithArticles },
+    { articles: latestArticles },
+    { promotionaryArticles: promotionaryArticlesAsBanner },
+  ] = await Promise.all([
+    categoriesData,
+    categoriesWithArticleData,
+    latestArticlesData,
+    promotionaryArticlesData,
+  ]);
+
   const newCategories = [...allCategories].filter(
     (ele) => ele.id !== parseInt(categoryId)
   );
-
-  const { articles: latestArticles } = await getLatestArticles();
-  const { promotionaryArticles: promotionaryArticlesAsBanner } =
-    await getAllPromotionaryArticlesAsBanners();
-
   return (
     <>
       <main className="max-w-screen-xl min-h-screen flex flex-wrap mx-auto text-3xl mt-32 font-bold">
