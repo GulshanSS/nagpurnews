@@ -64,6 +64,7 @@ export default function CarouselBanner({
         {slides.length > 0 &&
           slides[currentIndex].media[0].type.startsWith("video/") && (
             <video
+              playsInline
               className={`${variant[heightVariant]} w-full rounded-md`}
               src={slides[currentIndex].media[0].key}
               controls={true}

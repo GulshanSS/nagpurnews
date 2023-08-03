@@ -22,6 +22,7 @@ export default function PromotionaryArticleCard({
         )}
         {promotionaryArticle.media.type.startsWith("video/") && (
           <video
+            playsInline
             className="w-full rounded-md"
             src={promotionaryArticle.media.key}
             controls={true}
