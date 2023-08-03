@@ -6,8 +6,6 @@ export async function getAllCategories() {
 }
 
 export async function getAllArticlesForCategory(categoryId: string) {
-  const res = await fetch(`${BASE_URL}/${categoryId}`, {
-    next: { revalidate: 60 },
-  });
+  const res = await fetch(`${BASE_URL}/${categoryId}`);
   return res.json();
 }
