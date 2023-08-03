@@ -67,8 +67,10 @@ export default function CarouselBanner({
               playsInline
               className={`${variant[heightVariant]} w-full rounded-md`}
               src={slides[currentIndex].media[0].key}
-              controls={true}
-              autoPlay={false}
+              loop
+              controls
+              autoPlay
+              muted
             >
               <source
                 src={slides[currentIndex].media[0].key}

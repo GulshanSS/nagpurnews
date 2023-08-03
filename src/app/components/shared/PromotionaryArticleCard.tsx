@@ -24,8 +24,10 @@ export default function PromotionaryArticleCard({
           <video
             playsInline
             className="w-full rounded-md"
-            controls={true}
-            autoPlay={false}
+            controls
+            loop
+            autoPlay
+            muted
           >
             <source
               src={promotionaryArticle.media.key}
