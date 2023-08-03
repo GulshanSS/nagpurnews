@@ -1,9 +1,5 @@
 import BannerFeed from "./components/Banner/BannerFeed";
-import {
-  getAllArticlesAsBanners,
-  getLatestArticles,
-  getMainFeedArticles,
-} from "./lib/article";
+import { getAllArticlesAsBanners, getMainFeedArticles } from "./lib/article";
 import Feed from "./components/main/Feed";
 
 export default async function Home() {
@@ -12,6 +8,7 @@ export default async function Home() {
 
   const [{ articles: articlesAsBanners }, { articles: mainFeedArticles }] =
     await Promise.all([articleAsBannerData, mainFeedArticlesData]);
+
   return (
     <>
       <BannerFeed articles={articlesAsBanners} />
