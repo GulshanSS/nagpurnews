@@ -8,7 +8,7 @@ type Params = {
   };
 };
 
-export default async function ArticlePage({ params: { articleId } }: Params) {
+export default async function Article({ params: { articleId } }: Params) {
   const { article } = await getArticleById(articleId);
 
   return (

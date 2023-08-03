@@ -11,7 +11,7 @@ type Params = {
   };
 };
 
-export default async function CategoryPage({ params: { categoryId } }: Params) {
+export default async function Category({ params: { categoryId } }: Params) {
   const categoriesData = getAllCategories();
   const categoriesWithArticleData = getAllArticlesForCategory(categoryId);
 
