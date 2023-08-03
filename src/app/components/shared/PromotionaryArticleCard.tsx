@@ -24,10 +24,14 @@ export default function PromotionaryArticleCard({
           <video
             playsInline
             className="w-full rounded-md"
-            src={promotionaryArticle.media.key}
             controls={true}
             autoPlay={false}
-          />
+          >
+            <source
+              src={promotionaryArticle.media.key}
+              type={promotionaryArticle.media.type}
+            />
+          </video>
         )}
         <div className="px-2.5 py-1.5">
           {promotionaryArticle.title && (

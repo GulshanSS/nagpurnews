@@ -69,7 +69,12 @@ export default function CarouselBanner({
               src={slides[currentIndex].media[0].key}
               controls={true}
               autoPlay={false}
-            />
+            >
+              <source
+                src={slides[currentIndex].media[0].key}
+                type={slides[currentIndex].media[0].type}
+              />
+            </video>
           )}
         {slides.length > 1 && (
           <>
