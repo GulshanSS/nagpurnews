@@ -7,7 +7,7 @@ type Props = {
 
 export default function ArticleCardForCategory({ article }: Props) {
   return (
-    <div className="w-96 md:w-72 flex flex-col justify-center gap-2 rounded-md p-2 shadow-md cursor-pointer">
+    <div className="w-96 md:w-64 flex flex-col justify-center gap-2 rounded-md p-2 shadow-md cursor-pointer">
       {article.media[0].type.startsWith("image/") && (
         <img
           className="h-48 object-cover rounded-md"
