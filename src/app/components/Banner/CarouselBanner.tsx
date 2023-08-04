@@ -112,7 +112,7 @@ export default function CarouselBanner({
           </div>
           {slides.length > 0 && (
             <div
-              className="text-[14px] text-primary-800 leading-4 font-medium
+              className="text-[14px] box-content overflow-hidden text-ellipsis text-primary-800 leading-4 font-medium
               line-clamp-3 pt-2"
               dangerouslySetInnerHTML={{
                 __html: slides[currentIndex].content,
