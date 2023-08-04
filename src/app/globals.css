@@ -23,7 +23,13 @@ html {
   -webkit-box-orient: vertical;
 }
 
-.carousel-banner-card, .article-card {
+.line-clamp-div > p {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.carousel-banner-card,
+.article-card {
   -webkit-line-clamp: 3;
 }
 
