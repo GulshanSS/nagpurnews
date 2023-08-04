@@ -41,12 +41,6 @@ export default function PromotionaryArticleCard({
               {promotionaryArticle.title}
             </div>
           )}
-          {promotionaryArticle.content && (
-            <div
-              className="text-[14px] line-clamp-2 leading-6 text-justify font-thin text-primary-800 mt-2"
-              dangerouslySetInnerHTML={{ __html: promotionaryArticle.content }}
-            ></div>
-          )}
           <div className="flex gap-2 my-2">
             {promotionaryArticle.whatsAppLink !== "" ? (
               <SocialLinkForPromotionaryArticle

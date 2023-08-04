@@ -16,3 +16,17 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.line-clamp-div {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.carousel-banner-card, .article-card {
+  -webkit-line-clamp: 3;
+}
+
+.promotionary-article-card {
+  -webkit-line-clamp: 2;
+}

@@ -27,11 +27,11 @@ export default function ArticleCard({ article }: Props) {
             </Link>
           ))}
         <Link href={`/article/${article.id}`}>
-          <span className="text-lg box-content overflow-hidden text-ellipsis line-clamp-2 leading-5 text-justify font-normal text-primary-800 border-b  border-primary-600">
+          <span className="text-lg line-clamp-1 text-ellipsis leading-5 text-justify font-normal text-primary-800 border-b  border-primary-600">
             {article.title}
           </span>
           <div
-            className="text-[14px] box-content overflow-hidden text-ellipsis line-clamp-3 lg:line-clamp-4 leading-6 text-justify font-thin text-primary-800 mt-2"
+            className="text-[14px] w-full leading-6 text-justify font-thin text-primary-800 mt-2 line-clamp-div article-card"
             dangerouslySetInnerHTML={{ __html: article.content }}
           ></div>
         </Link>
