@@ -9,48 +9,52 @@ type Props = {
 
 export default function ArticleCard({ article }: Props) {
   return (
-    <div className="min-w-80 flex flex-wrap md:flex-nowrap justify-between items-center gap-2 rounded-md p-2 shadow-md cursor-pointer">
-      <div className="flex flex-col md:px-2.5 py-2.5 md:py-0">
+    <div className="min-w-80 flex flex-col gap-2 rounded-md px-2.5 border border-gray-200 shadow-md cursor-pointer">
+      <div className="flex items-center">
         {article.category &&
           article.category.map((category) => (
             <Link
               key={category.id}
-              className="mb-4"
+              className=""
               href={`/category/${category.id}`}
             >
               <span
                 key={category.id}
-                className="w-fit text-lg px-2.5 text-primary-100 bg-widget-100/80 font-semibold uppercase rounded-r-full border-l-8 border-widget-100"
+                className="text-[14px] font-bold uppercase text-red-600"
               >
                 {category.name}
               </span>
             </Link>
           ))}
+      </div>
+      <div className="flex mb-2 gap-2">
         <Link href={`/article/${article.id}`}>
-          <span className="text-lg line-clamp-1 text-ellipsis leading-5 text-justify font-normal text-primary-800 border-b  border-primary-600">
-            {article.title}
-          </span>
+          <p className="text-sm md:text-xl font-bold text-primary-800">{article.title}</p>
           <div
-            className="text-[14px] w-full leading-6 text-justify font-thin text-primary-800 mt-2 line-clamp-div article-card"
+            className="text-[14px] w-full leading-6 text-justify font-thin text-gray-500 line-clamp-div article-card"
             dangerouslySetInnerHTML={{ __html: article.content }}
           ></div>
         </Link>
+        {article.media[0].type.startsWith("image/") && (
+          <img
+            className="w-[100px] md:w-[150px] h-24 object-cover rounded-md"
+            alt={article.title}
+            src={article.media[0].key}
+          />
+        )}
+        {article.media[0].type.startsWith("video/") && (
+          <video
+            playsInline
+            className="flex justify-center min-w-[100px] md:min-w-[150px] h-24 bg-black rounded-md"
+            controls
+            loop
+            autoPlay
+            muted
+          >
+            <source src={article.media[0].key} type={article.media[0].type} />
+          </video>
+        )}
       </div>
-      {article.media[0].type.startsWith("image/") && (
-        <img
-          className="w-full md:w-[190px] md:h-32 lg:h-48 object-cover rounded-md"
-          alt={article.title}
-          src={article.media[0].key}
-        />
-      )}
-      {article.media[0].type.startsWith("video/") && (
-        <video
-          className="flex justify-center w-full md:h-32 lg:h-48 bg-black rounded-md"
-          controls={true}
-          autoPlay={false}
-          src={article.media[0].key}
-        />
-      )}
     </div>
   );
 }
