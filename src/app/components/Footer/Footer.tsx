@@ -4,12 +4,12 @@ import { BsFacebook, BsInstagram, BsTwitter, BsWhatsapp } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <div className="bottom-0 w-full bg-primary-900 py-2.5">
-      <div className="max-w-screen-xl mx-auto flex gap-4 flex-col md:flex-row md:justify-between items-center">
+    <div className="bottom-0 w-full bg-primary-900">
+      <div className="max-w-screen-xl mx-auto flex gap-4 flex-col md:flex-row md:justify-between items-center p-4">
         <span className="w-full flex justify-center md:justify-start text-[16px] text-primary-50 order-2 md:order-1 mx-2">
           2023 &copy; Copyright Nagpur News
         </span>
-        <div className="w-full pb-3 md:pb-0 flex justify-center md:justify-end items-center gap-2 order-1 md:order-2 md:border-none border-b border-primary-50 mx-2">
+        <div className="w-full md:pb-0 flex justify-center md:justify-end items-center gap-2 order-1 md:order-2 mx-2">
           <span className="text-sm font-bold uppercase text-primary-50 hidden md:block">
             Follow us on
           </span>
