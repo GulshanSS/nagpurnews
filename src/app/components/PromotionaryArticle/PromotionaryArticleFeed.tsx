@@ -12,7 +12,7 @@ export default function PromotionaryArticleFeed({
   return (
     <>
       <div className="mx-2 p-2">
-        <div className="my-4 flex flex-col gap-2">
+        <div className="flex flex-col gap-2">
           {promotionaryArticles &&
             promotionaryArticles.map((promotionaryArticle) => (
               <PromotionaryArticleCard
