@@ -9,15 +9,13 @@ type Props = {
 export default function ArticleFeed({ article }: Props) {
   return (
     <div className="mx-2 p-2 rounded-md mb-6">
-      <Carousel slides={article.media} heightVariant="large" />
-      <div className="mb-6 text-justify font-semibold text-2xl text-primary-800 uppercase">
+      <Carousel slides={article.media} />
+      <div className="font-semibold text-xl md:text-2xl text-primary-800">
         {article.title}
       </div>
-      <div className="my-6 text-primary-800 font-semibold">
-        <span className="text-sm bg-widget-100 text-primary-50 px-2.5 py-1.5 rounded-md">
-          {article.location}
-        </span>
-        <div className="text-[12px] font-thin">
+      <div className="text-primary-800 font-semibold uppercase">
+        <div className="text-[10px] font-semibold">
+          {article.location},{" "}
           {new Intl.DateTimeFormat("indian", {
             year: "numeric",
             month: "long",
@@ -29,7 +27,7 @@ export default function ArticleFeed({ article }: Props) {
         </div>
       </div>
       <div
-        className="text-[16px] font-normal text-primary-800 leading-6 text-justify"
+        className="text-[16px] font-light text-primary-800 leading-6 text-justify"
         dangerouslySetInnerHTML={{ __html: article.content }}
       ></div>
     </div>
