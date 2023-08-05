@@ -5,19 +5,9 @@ import Link from "next/link";
 
 type Props = {
   slides: Article[];
-  heightVariant: string;
 };
 
-export default function CarouselBanner({
-  slides = [] as Article[],
-  heightVariant,
-}: Props) {
-  const variant: any = {
-    small: "h-[100px]",
-    large: "h-[500px]",
-    normal: "h-[200px]",
-  };
-
+export default function CarouselBanner({ slides = [] as Article[] }: Props) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const prevSlide = () => {
@@ -49,15 +39,13 @@ export default function CarouselBanner({
   }, [currentIndex]);
 
   return (
-    <div className="w-full group my-4">
-      <div
-        className={`${variant[heightVariant]} relative flex justify-center bg-black rounded-md`}
-      >
+    <div className="w-full group">
+      <div className="h-60 md:h-[500px] relative flex justify-center bg-black rounded-md">
         {slides.length > 0 &&
           slides[currentIndex].media[0].type.startsWith("image/") && (
             <img
               alt={slides[currentIndex].title}
-              className="h-full object-cover duration-500 rounded-md"
+              className="object-cover duration-500 rounded-md"
               src={slides[currentIndex].media[0].key}
             />
           )}
@@ -65,7 +53,7 @@ export default function CarouselBanner({
           slides[currentIndex].media[0].type.startsWith("video/") && (
             <video
               playsInline
-              className={`${variant[heightVariant]} w-full rounded-md`}
+              className="rounded-md"
               src={slides[currentIndex].media[0].key}
               loop
               controls
@@ -96,23 +84,23 @@ export default function CarouselBanner({
         )}
       </div>
       <div className="py-2.5 px-2">
-        <div className="mb-4">
+        <div className="mb-2">
           {slides.length > 0 &&
             slides[currentIndex].category.map((category) => (
               <Link key={category.id} href={`/category/${category.id}`}>
-                <span className="text-sm px-2 py-1 bg-widget-100 text-primary-50 font-medium uppercase rounded-full shadow-md">
+                <span className="text-sm px-2 py-1 bg-red-600 text-primary-50 font-medium uppercase rounded-full shadow-md">
                   {category.name}
                 </span>
               </Link>
             ))}
         </div>
         <Link href={`/article/${slides[currentIndex].id}`}>
-          <div className="text-2xl w-full border-b border-primary-600 font-medium text-primary-800 pb-2">
-            {slides.length > 0 && slides[currentIndex].title}
+          <div className="text-sm md:text-xl w-full text-justify leading-tight font-bold text-primary-900 capitalize">
+            <span>{slides.length > 0 && slides[currentIndex].title}</span>
           </div>
           {slides.length > 0 && (
             <div
-              className="text-[14px] text-primary-800 leading-6 font-medium pt-2 line-clamp-div carousel-banner-card"
+              className="text-[14px] text-slate-600 leading-6 font-medium pt-2 line-clamp-div carousel-banner-card"
               dangerouslySetInnerHTML={{
                 __html: slides[currentIndex].content,
               }}
