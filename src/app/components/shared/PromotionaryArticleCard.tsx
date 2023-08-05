@@ -12,7 +12,7 @@ export default function PromotionaryArticleCard({
 }: Props) {
   return (
     <>
-      <div className="flex flex-col gap-2 p-2 shadow-md rounded-md">
+      <div className="flex flex-col gap-2 p-2 border border-gray-200 shadow-sm rounded-md">
         {promotionaryArticle.media.type.startsWith("image/") && (
           <img
             className="w-full rounded-md"
@@ -37,7 +37,7 @@ export default function PromotionaryArticleCard({
         )}
         <div className="px-2.5 py-1.5">
           {promotionaryArticle.title && (
-            <div className="w-full text-xl text-primary-800 font-medium border-b border-primary-600">
+            <div className="w-full text-sm text-primary-800 font-medium">
               {promotionaryArticle.title}
             </div>
           )}
