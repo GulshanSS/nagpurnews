@@ -8,7 +8,7 @@ type Props = {
 
 export default function LatestNewsCard({ article }: Props) {
   return (
-    <div className="min-w-80 flex justify-between items-center gap-2 shadow-md rounded-md p-2 cursor-pointer">
+    <div className="min-w-80 flex justify-between items-center gap-2 border border-gray-200 shadow-sm rounded-md p-2 cursor-pointer">
       <Link href={`/article/${article.id}`}>
         <div className="flex flex-col">
           <span className="text-sm leading-4 font-semibold text-primary-800">
@@ -18,14 +18,14 @@ export default function LatestNewsCard({ article }: Props) {
       </Link>
       {article.media[0].type.startsWith("image/") && (
         <img
-          className="w-20 h-20 object-cover rounded-md"
+          className="w-20 h-20 text-[5px] object-cover rounded-md"
           alt={article.title}
           src={article.media[0].key}
         />
       )}
       {article.media[0].type.startsWith("video/") && (
         <video
-          className="flex justify-center w-[240px] h-20 bg-black rounded-md"
+          className="flex justify-center w-20 h-20 bg-black rounded-md"
           controls={false}
           autoPlay={false}
           src={article.media[0].key}
