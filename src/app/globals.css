@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  background-color: #fffdf2;
-}
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
 .scrollbar-hide::-webkit-scrollbar {
@@ -30,7 +27,7 @@ html {
 
 .carousel-banner-card,
 .article-card {
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
 }
 
 .promotionary-article-card {
