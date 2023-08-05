@@ -19,7 +19,7 @@ export default function Navbar({ categories }: Props) {
   const [open, setOpen] = useState(true);
   return (
     <>
-      <nav className="top-0 fixed w-full bg-primary-50 border-b border-primary-600 z-50">
+      <nav className="top-0 w-full border-b border-primary-600 z-50">
         <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
           <a href="/" className="flex items-center">
             <Image
@@ -27,21 +27,12 @@ export default function Navbar({ categories }: Props) {
               className="w-8 mr-3 rounded-full ring-2 ring-primary-600"
               alt="Nagpur News Logo"
             />
-            <span className="self-center text-2xl text-primary-800 font-semibold whitespace-nowrap">
-              nagpurnews
+            <span className="self-center text-2xl text-primary-900 font-semibold whitespace-nowrap uppercase">
+              Nagpur News
             </span>
           </a>
-          {/* <div className="md:flex md:flex-row justify-start items-center hidden w-80 rounded-md px-1.5 py-1 bg-inherit border border-primary-600">
-            <input
-              className="w-full bg-inherit focus:outline-none mr-2"
-              placeholder="Search"
-            />
-            <span className="text-xl text-primary-800 inline-flex items-center p-1 hover:bg-primary-100 rounded-full">
-              <FiSearch />
-            </span>
-          </div> */}
           <div className="hidden md:flex justify-center items-center gap-2 mx-2">
-            <span className="text-sm font-bold uppercase text-primary-800">
+            <span className="text-sm font-bold uppercase text-primary-900">
               Follow us on
             </span>
             <SocialLinkForPromotionaryArticle
@@ -63,10 +54,10 @@ export default function Navbar({ categories }: Props) {
           </div>
           <button
             type="button"
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen(false)}
             className="inline-flex items-center p-2 ml-3 text-2xl text-primary-50 bg-primary-900 rounded-lg sm:hidden focus:outline-none"
           >
-            {open ? <FiChevronsLeft /> : <FiChevronsRight />}
+            <FiChevronsLeft />
           </button>
         </div>
       </nav>
@@ -75,8 +66,17 @@ export default function Navbar({ categories }: Props) {
           open ? "translate-x-full" : "translate-x-0"
         } duration-300 z-40`}
       >
-        <div className="h-full flex flex-col justify-between bg-primary-50 border-l pt-20 border-primary-600">
+        <div className="h-full flex flex-col justify-between bg-white border-l border-primary-600">
           <ul className="space-y-2 overflow-y-auto font-medium">
+            <span className="w-full flex justify-end items-center pr-5 pt-5">
+              <button
+                type="button"
+                onClick={() => setOpen(true)}
+                className="p-2 ml-3 text-2xl text-primary-50 bg-primary-900 rounded-lg sm:hidden focus:outline-none"
+              >
+                <FiChevronsRight />
+              </button>
+            </span>
             <li className="px-4 py-1.5 flex items-center border-b border-primary-600">
               <span className="mr-2">
                 <BiSolidCategory />
@@ -90,7 +90,7 @@ export default function Navbar({ categories }: Props) {
                     <li
                       key={category.id}
                       onClick={() => setOpen(!open)}
-                      className="cursor-pointer px-2.5 py-1.5 text-sm text-primary-800 rounded-md bg-primary-100 border border-primary-600"
+                      className="cursor-pointer px-2.5 py-1.5 text-sm text-primary-800 rounded-md bg-primary-50 border border-primary-600"
                     >
                       {category.name}
                     </li>
@@ -100,7 +100,7 @@ export default function Navbar({ categories }: Props) {
             <ul>
               <Link href="/aboutus">
                 <li
-                  onClick={() => setOpen(!open)}
+                  onClick={() => setOpen(true)}
                   className="px-4 py-1.5 flex items-center border-y border-primary-600"
                 >
                   <span className="mr-2">
