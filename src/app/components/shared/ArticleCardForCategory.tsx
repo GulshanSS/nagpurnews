@@ -7,10 +7,10 @@ type Props = {
 
 export default function ArticleCardForCategory({ article }: Props) {
   return (
-    <div className="min-w-80 md:w-72 flex flex-col justify-center gap-2 rounded-md p-2 cursor-pointer">
+    <div className="min-w-96 md:w-64 flex flex-col justify-center gap-2 rounded-md cursor-pointer">
       {article.media[0].type.startsWith("image/") && (
         <img
-          className="h-48 object-cover rounded-md"
+          className="h-52 object-cover rounded-md"
           alt={article.title}
           src={article.media[0].key}
         />
