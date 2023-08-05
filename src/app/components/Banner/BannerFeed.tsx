@@ -11,10 +11,7 @@ type Props = {
 export default function BannerFeed({ articles }: Props) {
   return (
     <div className="mx-2 p-2">
-      <span className="font-semibold text-2xl text-primary-800 uppercase">
-        Today's Special
-      </span>
-      {articles && <CarouselBanner slides={articles} heightVariant="large" />}
+      {articles && <CarouselBanner slides={articles} />}
     </div>
   );
 }
