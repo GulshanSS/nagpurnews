@@ -12,7 +12,7 @@ export default function SocialLinkForPromotionaryArticle({
   return (
     <a
       target="_blank"
-      className="rounded-full w-10 h-10 flex justify-center items-center text-xl border border-primary-600 bg-primary-100 text-primary-900 hover:bg-primary-900 hover:text-primary-100"
+      className="rounded-full w-10 h-10 flex justify-center items-center text-xl border border-primary-600 bg-primary-100 text-primary-800 hover:bg-primary-800 hover:text-primary-100"
       href={link}
     >
       {icon}
