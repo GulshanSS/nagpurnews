@@ -40,34 +40,42 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
 
   return (
     <div className="w-full group">
-      <div className="h-60 md:h-[500px] relative flex justify-center bg-black rounded-md">
+      <div className="w-full relative bg-black rounded-md">
         {slides.length > 0 &&
           slides[currentIndex].media[0].type.startsWith("image/") && (
-            <img
-              alt={slides[currentIndex].title}
-              className="object-cover duration-500 rounded-md"
-              src={slides[currentIndex].media[0].key}
-            />
+            <Link href={`/article/${slides[currentIndex].id}`}>
+              <div className="h-60 md:h-[500px] flex justify-center bg-black rounded-md">
+                <img
+                  alt={slides[currentIndex].title}
+                  className="object-cover duration-500 rounded-md"
+                  src={slides[currentIndex].media[0].key}
+                />
+              </div>
+            </Link>
           )}
         {slides.length > 0 &&
           slides[currentIndex].media[0].type.startsWith("video/") && (
-            <video
-              playsInline
-              className="rounded-md"
-              src={slides[currentIndex].media[0].key}
-              loop
-              controls
-              autoPlay
-              muted
-            >
-              <source
-                src={slides[currentIndex].media[0].key}
-                type={slides[currentIndex].media[0].type}
-              />
-            </video>
+            <Link href={`/article/${slides[currentIndex].id}`}>
+              <div className="h-60 md:h-[500px] flex justify-center bg-black rounded-md">
+                <video
+                  playsInline
+                  className="rounded-md"
+                  src={slides[currentIndex].media[0].key}
+                  loop
+                  controls
+                  autoPlay
+                  muted
+                >
+                  <source
+                    src={slides[currentIndex].media[0].key}
+                    type={slides[currentIndex].media[0].type}
+                  />
+                </video>
+              </div>
+            </Link>
           )}
         {slides.length > 1 && (
-          <>
+          <div>
             <div
               onClick={prevSlide}
               className="hidden md:group-hover:block absolute top-[50%] border text-primary-800 border-primary-600 bg-primary-50 -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-custom-800 bg-opacity-20 text-custom-50 cursor-pointer"
@@ -80,9 +88,10 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
             >
               <BsChevronCompactRight size={30} />
             </div>
-          </>
+          </div>
         )}
       </div>
+
       <div className="py-2.5 px-2">
         <div className="mb-2">
           {slides.length > 0 &&
