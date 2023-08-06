@@ -2,6 +2,7 @@ import React from "react";
 import { PromotionaryArticle } from "../../../../types";
 import SocialLinkForPromotionaryArticle from "./SocialLinkForPromotionaryArticle";
 import { BsInstagram, BsWhatsapp, BsGlobe, BsPhone } from "react-icons/bs";
+import Link from "next/link";
 
 type Props = {
   promotionaryArticle: PromotionaryArticle;
@@ -14,33 +15,41 @@ export default function PromotionaryArticleCard({
     <>
       <div className="flex flex-col gap-2 p-2 border border-gray-200 shadow-sm rounded-md">
         {promotionaryArticle.media.type.startsWith("image/") && (
-          <img
-            className="w-full rounded-md"
-            alt={promotionaryArticle.title}
-            src={promotionaryArticle.media.key}
-          />
+          <Link href={`/promotionary-article/${promotionaryArticle.id}`}>
+            <div>
+              <img
+                className="w-full rounded-md"
+                alt={promotionaryArticle.title}
+                src={promotionaryArticle.media.key}
+              />
+            </div>
+          </Link>
         )}
         {promotionaryArticle.media.type.startsWith("video/") && (
-          <video
-            playsInline
-            className="w-full rounded-md"
-            controls
-            loop
-            autoPlay
-            muted
-          >
-            <source
-              src={promotionaryArticle.media.key}
-              type={promotionaryArticle.media.type}
-            />
-          </video>
+          <Link href={`/promotionary-article/${promotionaryArticle.id}`}>
+            <video
+              playsInline
+              className="w-full rounded-md"
+              controls
+              loop
+              autoPlay
+              muted
+            >
+              <source
+                src={promotionaryArticle.media.key}
+                type={promotionaryArticle.media.type}
+              />
+            </video>
+          </Link>
         )}
         <div className="px-2.5 py-1.5">
-          {promotionaryArticle.title && (
-            <div className="w-full text-sm text-primary-800 font-medium">
-              {promotionaryArticle.title}
-            </div>
-          )}
+          <Link href={`/promotionary-article/${promotionaryArticle.id}`}>
+            {promotionaryArticle.title && (
+              <div className="w-full text-sm text-primary-800 font-medium">
+                {promotionaryArticle.title}
+              </div>
+            )}
+          </Link>
           <div className="flex gap-2 my-2">
             {promotionaryArticle.whatsAppLink !== "" ? (
               <SocialLinkForPromotionaryArticle
