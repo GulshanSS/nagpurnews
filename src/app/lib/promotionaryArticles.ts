@@ -6,3 +6,13 @@ export async function getAllPromotionaryArticlesAsBanners() {
   });
   return res.json();
 }
+
+export async function getPromotionaryArticleById(
+  promotionartArticleId: string
+) {
+  const res = await fetch(
+    `${BASE_URL}/promotionary-article/${promotionartArticleId}`,
+    { next: { revalidate: 60 } }
+  );
+  return res.json();
+}
