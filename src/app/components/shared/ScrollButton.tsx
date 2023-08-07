@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsArrowUp, BsArrowUpCircleFill } from "react-icons/bs";
 
 export default function ScrollButton() {
@@ -19,12 +19,17 @@ export default function ScrollButton() {
     });
   };
 
-  window.addEventListener("scroll", toggleVisible);
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisible);
+  }, []);
+
   return (
     <>
       <div
         onClick={scrollToTop}
-        className="fixed bottom-0 right-0 m-5 flex justify-center items-center p-2 rounded-full text-3xl bg-primary-800 text-primary-50 shadow-lg"
+        className={` ${
+          visilble ? "visible" : "invisible"
+        } fixed bottom-0 right-0 m-5 flex justify-center items-center p-2 rounded-full text-3xl bg-primary-800 text-primary-50 shadow-lg`}
       >
         <BsArrowUpCircleFill />
       </div>
