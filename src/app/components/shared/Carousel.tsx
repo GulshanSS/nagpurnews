@@ -30,8 +30,9 @@ export default function Carousel({ slides }: Props) {
         <div className="h-60 md:h-[500px] flex justify-center bg-black rounded-md">
           {slides[currentIndex].type.startsWith("image/") && (
             <img
+              loading="lazy"
               alt={slides[currentIndex].articleId}
-              className="object-cover rounded-md duration-500"
+              className="w-full h-full overflow-hidden object-cover rounded-md duration-500"
               src={slides[currentIndex].key}
             />
           )}
