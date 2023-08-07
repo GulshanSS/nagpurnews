@@ -41,6 +41,7 @@ export default function ArticleCard({ article }: Props) {
           </div>
           {article.media[0].type.startsWith("image/") && (
             <img
+              loading="lazy"
               className="w-[100px] md:w-[150px] h-24 object-cover rounded-md"
               alt={article.title}
               src={article.media[0].key}
