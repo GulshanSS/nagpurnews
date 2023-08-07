@@ -14,12 +14,15 @@ type Props = {
 };
 
 export default function Share({ url, title }: Props) {
+  const [showNativeShare, setShowNativeShare] = useState<boolean>(false);
+
   const BaseUrl = process.env.NEXT_PUBLIC_CLIENT_URI as string;
+
   const shareData = {
     title,
     url: `${BaseUrl}/${url}`,
   };
-  const [showNativeShare, setShowNativeShare] = useState<boolean>(false);
+
   useEffect(() => {
     if (!navigator.canShare) {
       setShowNativeShare(false);
@@ -27,6 +30,10 @@ export default function Share({ url, title }: Props) {
       setShowNativeShare(true);
     }
   }, []);
+
+  const handleNativeShare = () => {
+    navigator.share(shareData);
+  };
 
   return (
     <>
@@ -73,14 +80,11 @@ export default function Share({ url, title }: Props) {
         </li>
         {showNativeShare && (
           <li>
-            <a
-              target="_blank"
-              href={`http://twitter.com/share?text=${title}&url=${BaseUrl}/${url}`}
-            >
+            <button onClick={handleNativeShare}>
               <span className="text-xl rounded-full">
                 <BsShareFill />
               </span>
-            </a>
+            </button>
           </li>
         )}
       </ul>
