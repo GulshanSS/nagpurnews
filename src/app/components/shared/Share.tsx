@@ -71,7 +71,7 @@ export default function Share({ url, title }: Props) {
         <li>
           <a
             target="_blank"
-            href={`http://twitter.com/share?text=${title}&url=${BaseUrl}/${url}`}
+            href={`http://twitter.com/intent/tweet?text=${title}&url=${BaseUrl}/${url}`}
           >
             <span className="text-xl rounded-full">
               <BsTwitter />
