@@ -46,8 +46,9 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
             <Link href={`/article/${slides[currentIndex].id}`}>
               <div className="h-60 md:h-[500px] flex justify-center bg-black rounded-md">
                 <img
+                  loading="lazy"
                   alt={slides[currentIndex].title}
-                  className="object-cover duration-500 rounded-md"
+                  className="w-full h-full overflow-hidden object-cover duration-500 rounded-md"
                   src={slides[currentIndex].media[0].key}
                 />
               </div>
