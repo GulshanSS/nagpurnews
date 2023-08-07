@@ -18,6 +18,7 @@ export default function PromotionaryArticleCard({
           <Link href={`/promotionary-article/${promotionaryArticle.id}`}>
             <div>
               <img
+                loading="lazy"
                 className="w-full rounded-md"
                 alt={promotionaryArticle.title}
                 src={promotionaryArticle.media.key}
