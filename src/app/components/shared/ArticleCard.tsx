@@ -31,7 +31,7 @@ export default function ArticleCard({ article }: Props) {
       <Link href={`/article/${article.id}`}>
         <div className="flex gap-2 mb-2">
           <div>
-            <p className="text-sm md:text-xl font-bold text-primary-800">
+            <p className="text-sm md:text-xl font-bold text-primary-800 line-clamp-div article-card">
               {article.title}
             </p>
             <div
@@ -40,12 +40,14 @@ export default function ArticleCard({ article }: Props) {
             ></div>
           </div>
           {article.media[0].type.startsWith("image/") && (
-            <img
-              loading="lazy"
-              className="w-[100px] md:w-[150px] h-24 object-cover rounded-md"
-              alt={article.title}
-              src={article.media[0].key}
-            />
+            <div className="w-[100px] md:w-[150px] h-24">
+              <img
+                loading="lazy"
+                className="w-full h-full text-sm overflow-hidden object-cover rounded-md"
+                alt={article.title}
+                src={article.media[0].key}
+              />
+            </div>
           )}
           {article.media[0].type.startsWith("video/") && (
             <video
