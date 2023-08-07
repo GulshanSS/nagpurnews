@@ -13,7 +13,7 @@ export default function CategoryFeed({ category }: Props) {
       <div className="mb-6 font-semibold text-2xl text-primary-800 uppercase">
         {category && category.name}
       </div>
-      <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+      <div className="flex flex-wrap justify-center lg:justify-start gap-4">
         {category &&
           category.article.map((article) => (
             <Link key={article.id} href={`/article/${article.id}`}>
