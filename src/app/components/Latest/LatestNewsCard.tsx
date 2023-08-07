@@ -16,13 +16,11 @@ export default function LatestNewsCard({ article }: Props) {
           </span>
         </div>
         {article.media[0].type.startsWith("image/") && (
-          <div className="w-20 h-20">
-            <img
-              className="text-[5px] w-full h-full overflow-hidden object-cover rounded-md"
-              alt={article.title}
-              src={article.media[0].key}
-            />
-          </div>
+          <img
+            className="text-[5px] w-20 h-20 object-cover rounded-md"
+            alt={article.title}
+            src={article.media[0].key}
+          />
         )}
         {article.media[0].type.startsWith("video/") && (
           <video
