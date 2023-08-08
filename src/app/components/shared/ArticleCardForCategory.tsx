@@ -7,7 +7,7 @@ type Props = {
 
 export default function ArticleCardForCategory({ article }: Props) {
   return (
-    <div className="min-w-96 md:w-64 flex flex-col justify-center gap-2 rounded-md cursor-pointer">
+    <div className="w-80 md:w-64 flex flex-col justify-center gap-2 rounded-md cursor-pointer">
       {article.media[0].type.startsWith("image/") && (
         <div className="w-full h-52">
           <img
@@ -20,7 +20,7 @@ export default function ArticleCardForCategory({ article }: Props) {
       )}
       {article.media[0].type.startsWith("video/") && (
         <video
-          className="flex justify-center w-full h-48 bg-black rounded-md"
+          className="flex justify-center w-full h-52 bg-black rounded-md"
           controls={true}
           autoPlay={false}
           src={article.media[0].key}
