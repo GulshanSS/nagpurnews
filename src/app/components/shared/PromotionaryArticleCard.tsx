@@ -31,7 +31,6 @@ export default function PromotionaryArticleCard({
             <video
               playsInline
               className="w-full rounded-md"
-              controls
               loop
               autoPlay
               muted
