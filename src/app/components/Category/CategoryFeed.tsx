@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { Category } from "../../../../types";
 import ArticleCardForCategory from "../shared/ArticleCardForCategory";
 import Link from "next/link";
+import ScrollButton from "../shared/ScrollButton";
 
 type Props = {
   category: Category;
@@ -13,7 +16,7 @@ export default function CategoryFeed({ category }: Props) {
       <div className="mb-6 font-semibold text-2xl text-primary-800 uppercase">
         {category && category.name}
       </div>
-      <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+      <div className="flex flex-wrap justify-center lg:justify-start gap-8">
         {category &&
           category.article.map((article) => (
             <Link key={article.id} href={`/article/${article.id}`}>
@@ -21,6 +24,7 @@ export default function CategoryFeed({ category }: Props) {
             </Link>
           ))}
       </div>
+      <ScrollButton />
     </div>
   );
 
