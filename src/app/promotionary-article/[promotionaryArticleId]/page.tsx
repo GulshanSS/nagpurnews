@@ -1,6 +1,13 @@
+import Share from "@/app/components/shared/Share";
 import SocialLinkForPromotionaryArticle from "@/app/components/shared/SocialLinkForPromotionaryArticle";
 import { getPromotionaryArticleById } from "@/app/lib/promotionaryArticles";
-import { BsGlobe, BsInstagram, BsPhone, BsWhatsapp } from "react-icons/bs";
+import {
+  BsGlobe,
+  BsInstagram,
+  BsPhone,
+  BsShare,
+  BsWhatsapp,
+} from "react-icons/bs";
 import { IoLocationSharp } from "react-icons/io5";
 
 type Params = {
@@ -83,6 +90,16 @@ export default async function PromotionaryArticle({
             ) : null}
           </div>
         </div>
+        <div className="w-full flex justify-center md:justify-start gap-2 items-center text-center text-red-600 text-sm md:mx-2 mb-4 uppercase">
+          <span>
+            <BsShare />
+          </span>
+          Share
+        </div>
+        <Share
+          url={`article/${promotionaryArticle.id}`}
+          title={promotionaryArticle.title}
+        />
       </div>
     </>
   );
