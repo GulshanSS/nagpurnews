@@ -27,7 +27,7 @@ export default function Navbar({ categories }: Props) {
               className="w-8 mr-3 rounded-full ring-2 ring-primary-600"
               alt="Nagpur News Logo"
             />
-            <span className="self-center text-2xl text-primary-900 font-semibold whitespace-nowrap uppercase">
+            <span className="self-center text-2xl text-primary-900 font-semibold whitespace-nowrap capitalize">
               Nagpur News
             </span>
           </a>
