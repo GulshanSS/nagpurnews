@@ -1,6 +1,12 @@
 import React from "react";
 import SocialLinkForPromotionaryArticle from "../shared/SocialLinkForPromotionaryArticle";
-import { BsFacebook, BsInstagram, BsTwitter, BsWhatsapp } from "react-icons/bs";
+import {
+  BsFacebook,
+  BsInstagram,
+  BsTwitter,
+  BsWhatsapp,
+  BsYoutube,
+} from "react-icons/bs";
 
 export default function Footer() {
   return (
@@ -13,10 +19,26 @@ export default function Footer() {
           <span className="text-sm font-bold uppercase text-primary-50 hidden md:block">
             Follow us on
           </span>
-          <SocialLinkForPromotionaryArticle icon={<BsWhatsapp />} link="https://wa.me/message/LWMXJ6WS46UYO1" />
-          <SocialLinkForPromotionaryArticle icon={<BsFacebook />} link="https://www.facebook.com/profile.php?id=100064034115032&mibextid=LQQJ4d" />
-          <SocialLinkForPromotionaryArticle icon={<BsInstagram />} link="https://instagram.com/nagpurnews?igshid=OGQ5ZDc2ODk2ZA==" />
-          <SocialLinkForPromotionaryArticle icon={<BsTwitter />} link="https://twitter.com/nagpurnews3?s=11&t=8HMRzhBp7cDyqAwaBU2sRA" />
+          <SocialLinkForPromotionaryArticle
+            icon={<BsYoutube />}
+            link="https://youtube.com/@nagpurnews1"
+          />
+          <SocialLinkForPromotionaryArticle
+            icon={<BsFacebook />}
+            link="https://www.facebook.com/profile.php?id=100064034115032&mibextid=LQQJ4d"
+          />
+          <SocialLinkForPromotionaryArticle
+            icon={<BsInstagram />}
+            link="https://instagram.com/nagpurnews?igshid=OGQ5ZDc2ODk2ZA=="
+          />
+          <SocialLinkForPromotionaryArticle
+            icon={<BsTwitter />}
+            link="https://twitter.com/nagpurnews3?s=11&t=8HMRzhBp7cDyqAwaBU2sRA"
+          />
+          <SocialLinkForPromotionaryArticle
+            icon={<BsWhatsapp />}
+            link="https://wa.me/message/LWMXJ6WS46UYO1"
+          />
         </div>
       </div>
     </div>
