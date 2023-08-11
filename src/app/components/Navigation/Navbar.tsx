@@ -5,7 +5,13 @@ import logo from "@/app/assets/logo.jpg";
 import { FiChevronsRight, FiChevronsLeft, FiSearch } from "react-icons/fi";
 import { useState } from "react";
 import SocialLinkForPromotionaryArticle from "../shared/SocialLinkForPromotionaryArticle";
-import { BsFacebook, BsInstagram, BsTwitter, BsWhatsapp } from "react-icons/bs";
+import {
+  BsFacebook,
+  BsInstagram,
+  BsTwitter,
+  BsWhatsapp,
+  BsYoutube,
+} from "react-icons/bs";
 import { BiSolidCategory } from "react-icons/bi";
 import { BsPeopleFill } from "react-icons/bs";
 import { Category } from "../../../../types";
@@ -36,8 +42,8 @@ export default function Navbar({ categories }: Props) {
               Follow us on
             </span>
             <SocialLinkForPromotionaryArticle
-              icon={<BsWhatsapp />}
-              link="https://wa.me/message/LWMXJ6WS46UYO1"
+              icon={<BsYoutube />}
+              link="https://youtube.com/@nagpurnews1"
             />
             <SocialLinkForPromotionaryArticle
               icon={<BsFacebook />}
@@ -50,6 +56,10 @@ export default function Navbar({ categories }: Props) {
             <SocialLinkForPromotionaryArticle
               icon={<BsTwitter />}
               link="https://twitter.com/nagpurnews3?s=11&t=8HMRzhBp7cDyqAwaBU2sRA"
+            />
+            <SocialLinkForPromotionaryArticle
+              icon={<BsWhatsapp />}
+              link="https://wa.me/message/LWMXJ6WS46UYO1"
             />
           </div>
           <button
@@ -114,8 +124,8 @@ export default function Navbar({ categories }: Props) {
           <ul className="flex flex-col justify-center items-center gap-2 border-t border-primary-600 bg-primary-900 py-4">
             <li className="flex gap-2 justify-center items-center">
               <SocialLinkForPromotionaryArticle
-                icon={<BsWhatsapp />}
-                link="https://wa.me/message/LWMXJ6WS46UYO1"
+                icon={<BsYoutube />}
+                link="https://youtube.com/@nagpurnews1"
               />
               <SocialLinkForPromotionaryArticle
                 icon={<BsFacebook />}
@@ -128,6 +138,10 @@ export default function Navbar({ categories }: Props) {
               <SocialLinkForPromotionaryArticle
                 icon={<BsTwitter />}
                 link="https://twitter.com/nagpurnews3?s=11&t=8HMRzhBp7cDyqAwaBU2sRA"
+              />
+              <SocialLinkForPromotionaryArticle
+                icon={<BsWhatsapp />}
+                link="https://wa.me/message/LWMXJ6WS46UYO1"
               />
             </li>
             <li>
