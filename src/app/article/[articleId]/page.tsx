@@ -18,6 +18,9 @@ export async function generateMetadata(
   const { article } = await getArticleById(articleId);
   return {
     title: article.title,
+    alternates: {
+      canonical: `https://www.nagpurnews.live/${article.title}`,
+    },
     twitter: {
       title: article.title,
       images: [

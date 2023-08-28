@@ -4,12 +4,26 @@ import {
   getAllArticlesForCategory,
   getAllCategories,
 } from "@/app/lib/category";
+import { Metadata, ResolvingMetadata } from "next";
 
 type Params = {
   params: {
     categoryId: string;
   };
 };
+
+export async function generateMetadata(
+  { params: { categoryId } }: Params,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { category } = await getAllArticlesForCategory(categoryId);
+  return {
+    title: category.title,
+    alternates: {
+      canonical: `https://www.nagpurnews.live/${category.title}`,
+    },
+  };
+}
 
 export default async function Category({ params: { categoryId } }: Params) {
   const categoriesData = getAllCategories();

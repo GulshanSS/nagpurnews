@@ -1,6 +1,7 @@
 import Share from "@/app/components/shared/Share";
 import SocialLinkForPromotionaryArticle from "@/app/components/shared/SocialLinkForPromotionaryArticle";
 import { getPromotionaryArticleById } from "@/app/lib/promotionaryArticles";
+import { Metadata, ResolvingMetadata } from "next";
 import {
   BsGlobe,
   BsInstagram,
@@ -15,6 +16,21 @@ type Params = {
     promotionaryArticleId: string;
   };
 };
+
+export async function generateMetadata(
+  { params: { promotionaryArticleId } }: Params,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { promotionaryArticle } = await getPromotionaryArticleById(
+    promotionaryArticleId
+  );
+  return {
+    title: promotionaryArticle.title,
+    alternates: {
+      canonical: `https://www.nagpurnews.live/${promotionaryArticle.title}`,
+    },
+  };
+}
 
 export default async function PromotionaryArticle({
   params: { promotionaryArticleId },
