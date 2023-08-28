@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import logo from "@/app/assets/logo.jpg";
-import { FiChevronsRight, FiChevronsLeft, FiSearch } from "react-icons/fi";
+import { FiChevronsRight, FiChevronsLeft } from "react-icons/fi";
 import { useState } from "react";
 import SocialLinkForPromotionaryArticle from "../shared/SocialLinkForPromotionaryArticle";
 import {
@@ -44,22 +44,27 @@ export default function Navbar({ categories }: Props) {
             <SocialLinkForPromotionaryArticle
               icon={<BsYoutube />}
               link="https://youtube.com/@nagpurnews1"
+              socialMediaName="youtube"
             />
             <SocialLinkForPromotionaryArticle
               icon={<BsFacebook />}
               link="https://www.facebook.com/profile.php?id=100064034115032&mibextid=LQQJ4d"
+              socialMediaName="facebook"
             />
             <SocialLinkForPromotionaryArticle
               icon={<BsInstagram />}
               link="https://instagram.com/nagpurnews?igshid=OGQ5ZDc2ODk2ZA=="
+              socialMediaName="instagram"
             />
             <SocialLinkForPromotionaryArticle
               icon={<BsTwitter />}
               link="https://twitter.com/nagpurnews3?s=11&t=8HMRzhBp7cDyqAwaBU2sRA"
+              socialMediaName="twitter"
             />
             <SocialLinkForPromotionaryArticle
               icon={<BsWhatsapp />}
               link="https://wa.me/message/LWMXJ6WS46UYO1"
+              socialMediaName="whatsapp"
             />
           </div>
           <button
@@ -126,22 +131,27 @@ export default function Navbar({ categories }: Props) {
               <SocialLinkForPromotionaryArticle
                 icon={<BsYoutube />}
                 link="https://youtube.com/@nagpurnews1"
+                socialMediaName="youtube"
               />
               <SocialLinkForPromotionaryArticle
                 icon={<BsFacebook />}
                 link="https://www.facebook.com/profile.php?id=100064034115032&mibextid=LQQJ4d"
+                socialMediaName="facebook"
               />
               <SocialLinkForPromotionaryArticle
                 icon={<BsInstagram />}
                 link="https://instagram.com/nagpurnews?igshid=OGQ5ZDc2ODk2ZA=="
+                socialMediaName="instagram"
               />
               <SocialLinkForPromotionaryArticle
                 icon={<BsTwitter />}
                 link="https://twitter.com/nagpurnews3?s=11&t=8HMRzhBp7cDyqAwaBU2sRA"
+                socialMediaName="twitter"
               />
               <SocialLinkForPromotionaryArticle
                 icon={<BsWhatsapp />}
                 link="https://wa.me/message/LWMXJ6WS46UYO1"
+                socialMediaName="whatsapp"
               />
             </li>
             <li>
