@@ -3,7 +3,7 @@ import React from "react";
 type Props = {
   icon: JSX.Element;
   link: string;
-  socialMediaName: string;
+  socialMediaName?: string;
 };
 
 export default function SocialLinkForPromotionaryArticle({
@@ -22,7 +22,9 @@ export default function SocialLinkForPromotionaryArticle({
   return (
     <a
       target="_blank"
-      className={`rounded-full w-10 h-10 flex justify-center items-center text-xl ${colorVariant[socialMediaName]} hover:bg-primary-900 hover:text-primary-50`}
+      className={`rounded-full w-10 h-10 flex justify-center items-center text-xl ${
+        socialMediaName ? colorVariant[socialMediaName] : "text-primary-800"
+      } hover:bg-primary-900 hover:text-primary-50`}
       href={link}
     >
       {icon}
