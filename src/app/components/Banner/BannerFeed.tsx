@@ -1,6 +1,5 @@
 "use client";
 
-import { useId } from "react";
 import { Article } from "../../../../types";
 import CarouselBanner from "./CarouselBanner";
 
