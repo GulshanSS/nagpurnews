@@ -38,10 +38,13 @@ export default function Carousel({ slides }: Props) {
           )}
           {slides[currentIndex].type.startsWith("video/") && (
             <video
+              playsInline
               className="rounded-md"
               src={slides[currentIndex].key}
-              controls={true}
-              autoPlay={false}
+              loop
+              controls
+              autoPlay
+              muted
             />
           )}
           {slides.length > 1 && (
