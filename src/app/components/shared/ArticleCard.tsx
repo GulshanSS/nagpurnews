@@ -11,7 +11,7 @@ type Props = {
 export default function ArticleCard({ article }: Props) {
   return (
     <div className="min-w-80 flex flex-col gap-2 rounded-md px-2.5 border border-gray-200 shadow-md cursor-pointer">
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         {article.category &&
           article.category.map((category) => (
             <Link
