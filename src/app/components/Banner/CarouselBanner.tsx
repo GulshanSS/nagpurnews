@@ -2,12 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import { Article } from "../../../../types";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import Link from "next/link";
+import { CgTimelapse } from "react-icons/cg";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 type Props = {
   slides: Article[];
 };
 
 export default function CarouselBanner({ slides = [] as Article[] }: Props) {
+  dayjs.extend(relativeTime);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const prevSlide = () => {
@@ -94,7 +98,7 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
       </div>
 
       <div className="py-2.5 px-2">
-        <div className="mb-2">
+        <div className="mb-2 flex gap-2">
           {slides.length > 0 &&
             slides[currentIndex].category.map((category) => (
               <Link key={category.id} href={`/category/${category.id}`}>
@@ -116,6 +120,12 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
               }}
             ></div>
           )}
+          <div className="flex items-center text-gray-400 text-[12px]">
+            <span className="mr-1.5">
+              <CgTimelapse />
+            </span>
+            {dayjs(slides[currentIndex].updatedAt).from(Date.now())}
+          </div>
         </Link>
       </div>
     </div>
