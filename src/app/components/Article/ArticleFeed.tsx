@@ -2,7 +2,7 @@ import React from "react";
 import { Article } from "../../../../types";
 import Carousel from "../shared/Carousel";
 import Share from "../shared/Share";
-import { BsShare, BsShareFill } from "react-icons/bs";
+import { BsShare } from "react-icons/bs";
 
 type Props = {
   article: Article;
