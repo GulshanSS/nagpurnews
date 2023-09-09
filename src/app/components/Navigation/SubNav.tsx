@@ -21,7 +21,7 @@ export default async function SubNav() {
               categories.map((category: Category) => (
                 <NavPill
                   key={category.id}
-                  href={`/category/${category.id}`}
+                  href={`/category/${category.id}/${category.slug}`}
                   label={category.name}
                 />
               ))}
