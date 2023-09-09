@@ -1,6 +1,7 @@
 export type Category = {
   id: number;
   name: string;
+  slug: string;
   active: boolean;
   article: Article[];
   createdAt: Date;
@@ -10,6 +11,7 @@ export type Category = {
 export type Tag = {
   id: number;
   name: string;
+  slug: string;
   active: boolean;
   setAsCategory: boolean;
   createdAt: Date;
@@ -56,6 +58,7 @@ export type PromotionaryArticle = {
   updatedAt: Date;
   priority: number;
   title: string;
+  slug: string;
   content: string;
   websiteLink: string;
   whatsAppLink: string;
@@ -72,6 +75,7 @@ export type Article = {
   createdAt: Date;
   updatedAt: Date;
   title: string;
+  slug: string;
   content: string;
   location: string;
   youtubeVideoUrl: string;
