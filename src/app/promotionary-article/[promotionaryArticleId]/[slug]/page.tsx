@@ -114,7 +114,7 @@ export default async function PromotionaryArticle({
           Share
         </div>
         <Share
-          url={`article/${promotionaryArticle.id}`}
+          url={`article/${promotionaryArticle.id}/${promotionaryArticle.slug}`}
           title={promotionaryArticle.title}
         />
       </div>

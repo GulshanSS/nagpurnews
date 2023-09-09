@@ -61,7 +61,10 @@ export default function ArticleCard({ article }: Props) {
           )}
         </div>
       </Link>
-      <Share url={`article/${article.id}`} title={article.title} />
+      <Share
+        url={`article/${article.id}/${article.slug}`}
+        title={article.title}
+      />
     </div>
   );
 }

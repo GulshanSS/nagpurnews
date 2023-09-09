@@ -36,7 +36,10 @@ export default function ArticleFeed({ article }: Props) {
         </span>
         Share
       </div>
-      <Share url={`article/${article.id}`} title={article.title} />
+      <Share
+        url={`article/${article.id}/${article.slug}`}
+        title={article.title}
+      />
     </div>
   );
 }
