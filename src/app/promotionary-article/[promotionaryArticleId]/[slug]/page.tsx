@@ -14,11 +14,12 @@ import { IoLocationSharp } from "react-icons/io5";
 type Params = {
   params: {
     promotionaryArticleId: string;
+    slug: string;
   };
 };
 
 export async function generateMetadata(
-  { params: { promotionaryArticleId } }: Params,
+  { params: { promotionaryArticleId, slug } }: Params,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { promotionaryArticle } = await getPromotionaryArticleById(
@@ -27,7 +28,7 @@ export async function generateMetadata(
   return {
     title: promotionaryArticle.title,
     alternates: {
-      canonical: `https://www.nagpurnews.live/${promotionaryArticle.title}`,
+      canonical: `https://www.nagpurnews.live/promotionary-article/${promotionaryArticleId}/${slug}`,
     },
   };
 }

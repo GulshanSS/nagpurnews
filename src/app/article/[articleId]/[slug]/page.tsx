@@ -8,18 +8,19 @@ const BaseUrl = process.env.NEXT_PUBLIC_CLIENT_URI as string;
 type Params = {
   params: {
     articleId: string;
+    slug: string;
   };
 };
 
 export async function generateMetadata(
-  { params: { articleId } }: Params,
+  { params: { articleId, slug } }: Params,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { article } = await getArticleById(articleId);
   return {
     title: article.title,
     alternates: {
-      canonical: `https://www.nagpurnews.live/${article.title}`,
+      canonical: `https://www.nagpurnews.live/article/${articleId}/${slug}`,
     },
     twitter: {
       title: article.title,

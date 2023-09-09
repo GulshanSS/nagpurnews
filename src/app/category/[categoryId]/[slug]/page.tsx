@@ -9,18 +9,19 @@ import { Metadata, ResolvingMetadata } from "next";
 type Params = {
   params: {
     categoryId: string;
+    slug: string;
   };
 };
 
 export async function generateMetadata(
-  { params: { categoryId } }: Params,
+  { params: { categoryId, slug } }: Params,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { category } = await getAllArticlesForCategory(categoryId);
   return {
     title: category.title,
     alternates: {
-      canonical: `https://www.nagpurnews.live/${category.title}`,
+      canonical: `https://www.nagpurnews.live/category/${categoryId}/${slug}`,
     },
   };
 }
