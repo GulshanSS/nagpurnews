@@ -14,10 +14,11 @@ export default function ExploreCategory({ categories }: Props) {
       </span>
       <div className="flex flex-wrap gap-2 text-primary-50">
         {categories.map((category) => (
-          <Link key={category.id} href={`/category/${category.id}`}>
-            <div
-              className="uppercase text-[12px] font-thin px-2.5 hover:bg-primary-50 hover:text-primary-900 border-2 border-primary-50 rounded-md cursor-pointer"
-            >
+          <Link
+            key={category.id}
+            href={`/category/${category.id}/${category.slug}`}
+          >
+            <div className="uppercase text-[12px] font-thin px-2.5 hover:bg-primary-50 hover:text-primary-900 border-2 border-primary-50 rounded-md cursor-pointer">
               {category.name}
             </div>
           </Link>

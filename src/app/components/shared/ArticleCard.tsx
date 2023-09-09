@@ -17,7 +17,7 @@ export default function ArticleCard({ article }: Props) {
             <Link
               key={category.id}
               className=""
-              href={`/category/${category.id}`}
+              href={`/category/${category.id}/${category.slug}`}
             >
               <span
                 key={category.id}
@@ -28,7 +28,7 @@ export default function ArticleCard({ article }: Props) {
             </Link>
           ))}
       </div>
-      <Link href={`/article/${article.id}`}>
+      <Link href={`/article/${article.id}/${article.slug}`}>
         <div className="flex gap-2 mb-2">
           <div>
             <p className="text-sm md:text-xl font-bold text-primary-800 line-clamp-div article-card">

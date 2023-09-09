@@ -47,7 +47,9 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
       <div className="w-full relative bg-black rounded-md">
         {slides.length > 0 &&
           slides[currentIndex].media[0].type.startsWith("image/") && (
-            <Link href={`/article/${slides[currentIndex].id}`}>
+            <Link
+              href={`/article/${slides[currentIndex].id}/${slides[currentIndex].slug}`}
+            >
               <div className="h-60 md:h-[500px] flex justify-center bg-black rounded-md">
                 <img
                   loading="lazy"
@@ -60,7 +62,9 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
           )}
         {slides.length > 0 &&
           slides[currentIndex].media[0].type.startsWith("video/") && (
-            <Link href={`/article/${slides[currentIndex].id}`}>
+            <Link
+              href={`/article/${slides[currentIndex].id}/${slides[currentIndex].slug}`}
+            >
               <div className="h-60 md:h-[500px] flex justify-center bg-black rounded-md">
                 <video
                   playsInline
@@ -101,14 +105,19 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
         <div className="mb-2 flex gap-2">
           {slides.length > 0 &&
             slides[currentIndex].category.map((category) => (
-              <Link key={category.id} href={`/category/${category.id}`}>
+              <Link
+                key={category.id}
+                href={`/category/${category.id}/${category.slug}`}
+              >
                 <span className="text-sm px-2 py-1 bg-red-600 text-primary-50 font-medium uppercase rounded-full shadow-md">
                   {category.name}
                 </span>
               </Link>
             ))}
         </div>
-        <Link href={`/article/${slides[currentIndex].id}`}>
+        <Link
+          href={`/article/${slides[currentIndex].id}/${slides[currentIndex].slug}`}
+        >
           <div className="text-sm md:text-xl w-full text-justify leading-tight font-bold text-primary-900 capitalize">
             <span>{slides.length > 0 && slides[currentIndex].title}</span>
           </div>
