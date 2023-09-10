@@ -15,9 +15,7 @@ export default function PromotionaryArticleCard({
     <>
       <div className="flex flex-col gap-2 p-2 border border-gray-200 shadow-sm rounded-md">
         {promotionaryArticle.media.type.startsWith("image/") && (
-          <Link
-            href={`/promotionary-article/${promotionaryArticle.id}/${promotionaryArticle.slug}`}
-          >
+          <Link href={`/promotionary-article/${promotionaryArticle.slug}`}>
             <div>
               <img
                 loading="lazy"
@@ -29,9 +27,7 @@ export default function PromotionaryArticleCard({
           </Link>
         )}
         {promotionaryArticle.media.type.startsWith("video/") && (
-          <Link
-            href={`/promotionary-article/${promotionaryArticle.id}/${promotionaryArticle.slug}`}
-          >
+          <Link href={`/promotionary-article/${promotionaryArticle.slug}`}>
             <video
               playsInline
               className="w-full rounded-md"
@@ -47,9 +43,7 @@ export default function PromotionaryArticleCard({
           </Link>
         )}
         <div className="px-2.5 py-1.5">
-          <Link
-            href={`/promotionary-article/${promotionaryArticle.id}/${promotionaryArticle.slug}`}
-          >
+          <Link href={`/promotionary-article/${promotionaryArticle.slug}`}>
             {promotionaryArticle.title && (
               <div className="w-full text-sm text-primary-800 font-medium">
                 {promotionaryArticle.title}

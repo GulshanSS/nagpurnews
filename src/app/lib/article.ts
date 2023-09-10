@@ -21,8 +21,8 @@ export async function getMainFeedArticles() {
   return res.json();
 }
 
-export async function getArticleById(articleId: string) {
-  const res = await fetch(`${BASE_URL}/article/${articleId}`, {
+export async function getArticleBySlug(slug: string) {
+  const res = await fetch(`${BASE_URL}/article/${slug}`, {
     cache: "no-store",
   });
   return res.json();

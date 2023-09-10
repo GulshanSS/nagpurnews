@@ -7,8 +7,8 @@ export async function getAllCategories() {
   return res.json();
 }
 
-export async function getAllArticlesForCategory(categoryId: string) {
-  const res = await fetch(`${BASE_URL}/${categoryId}`, {
+export async function getAllArticlesForCategory(slug: string) {
+  const res = await fetch(`${BASE_URL}/${slug}`, {
     cache: "no-store",
   });
   return res.json();

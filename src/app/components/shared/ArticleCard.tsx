@@ -17,7 +17,7 @@ export default function ArticleCard({ article }: Props) {
             <Link
               key={category.id}
               className=""
-              href={`/category/${category.id}/${category.slug}`}
+              href={`/category/${category.slug}`}
             >
               <span
                 key={category.id}
@@ -28,7 +28,7 @@ export default function ArticleCard({ article }: Props) {
             </Link>
           ))}
       </div>
-      <Link href={`/article/${article.id}/${article.slug}`}>
+      <Link href={`/article/${article.slug}`}>
         <div className="flex gap-2 mb-2">
           <div>
             <p className="text-sm md:text-xl font-bold text-primary-800 line-clamp-div article-card">
@@ -61,10 +61,7 @@ export default function ArticleCard({ article }: Props) {
           )}
         </div>
       </Link>
-      <Share
-        url={`article/${article.id}/${article.slug}`}
-        title={article.title}
-      />
+      <Share url={`article/${article.slug}`} title={article.title} />
     </div>
   );
 }

@@ -101,7 +101,7 @@ export default function Navbar({ categories }: Props) {
             <ul className="space-y-2 overflow-y-auto font-medium flex flex-col items-start gap-1 scrollbar-hide px-3 my-2">
               {categories &&
                 categories.map((category) => (
-                  <Link key={category.id} href={`/category/${category.id}`}>
+                  <Link key={category.id} href={`/category/${category.slug}`}>
                     <li
                       key={category.id}
                       onClick={() => setOpen(!open)}

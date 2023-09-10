@@ -1,6 +1,6 @@
 import Share from "@/app/components/shared/Share";
 import SocialLinkForPromotionaryArticle from "@/app/components/shared/SocialLinkForPromotionaryArticle";
-import { getPromotionaryArticleById } from "@/app/lib/promotionaryArticles";
+import { getPromotionaryArticleBySlug } from "@/app/lib/promotionaryArticles";
 import { Metadata, ResolvingMetadata } from "next";
 import {
   BsGlobe,
@@ -13,32 +13,27 @@ import { IoLocationSharp } from "react-icons/io5";
 
 type Params = {
   params: {
-    promotionaryArticleId: string;
     slug: string;
   };
 };
 
 export async function generateMetadata(
-  { params: { promotionaryArticleId, slug } }: Params,
+  { params: { slug } }: Params,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { promotionaryArticle } = await getPromotionaryArticleById(
-    promotionaryArticleId
-  );
+  const { promotionaryArticle } = await getPromotionaryArticleBySlug(slug);
   return {
     title: promotionaryArticle.title,
     alternates: {
-      canonical: `https://www.nagpurnews.live/promotionary-article/${promotionaryArticleId}/${slug}`,
+      canonical: `https://www.nagpurnews.live/promotionary-article/${slug}`,
     },
   };
 }
 
 export default async function PromotionaryArticle({
-  params: { promotionaryArticleId },
+  params: { slug },
 }: Params) {
-  const promotionaryArticleData = getPromotionaryArticleById(
-    promotionaryArticleId
-  );
+  const promotionaryArticleData = getPromotionaryArticleBySlug(slug);
 
   const { promotionaryArticle } = await promotionaryArticleData;
 

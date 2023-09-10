@@ -13,7 +13,7 @@ type Props = {
 export default function LatestNewsCard({ article }: Props) {
   dayjs.extend(relativeTime);
   return (
-    <Link href={`/article/${article.id}/${article.slug}`}>
+    <Link href={`/article/${article.slug}`}>
       <div className="min-w-80 flex justify-between items-center gap-2 bg-primary-900 shadow-sm rounded-md p-2 cursor-pointer">
         <div className="flex flex-col justify-between">
           <div className="text-sm leading-4 font-semibold text-primary-50 line-clamp-div latest-news-card">

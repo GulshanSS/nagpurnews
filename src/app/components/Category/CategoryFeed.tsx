@@ -19,10 +19,7 @@ export default function CategoryFeed({ category }: Props) {
       <div className="flex flex-wrap justify-center lg:justify-start gap-4">
         {category &&
           category.article.map((article) => (
-            <Link
-              key={article.id}
-              href={`/article/${article.id}/${article.slug}`}
-            >
+            <Link key={article.id} href={`/article/${article.slug}`}>
               <ArticleCardForCategory article={article} />
             </Link>
           ))}

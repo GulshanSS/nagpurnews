@@ -1,5 +1,5 @@
 import ArticleFeed from "@/app/components/Article/ArticleFeed";
-import { getArticleById } from "@/app/lib/article";
+import { getArticleBySlug } from "@/app/lib/article";
 import { Metadata, ResolvingMetadata } from "next";
 import React from "react";
 
@@ -7,20 +7,19 @@ const BaseUrl = process.env.NEXT_PUBLIC_CLIENT_URI as string;
 
 type Params = {
   params: {
-    articleId: string;
     slug: string;
   };
 };
 
 export async function generateMetadata(
-  { params: { articleId, slug } }: Params,
+  { params: { slug } }: Params,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { article } = await getArticleById(articleId);
+  const { article } = await getArticleBySlug(slug);
   return {
     title: article.title,
     alternates: {
-      canonical: `https://www.nagpurnews.live/article/${articleId}/${slug}`,
+      canonical: `https://www.nagpurnews.live/article/${slug}`,
     },
     twitter: {
       title: article.title,
@@ -37,7 +36,7 @@ export async function generateMetadata(
     openGraph: {
       title: article.title,
       type: "article",
-      url: `${BaseUrl}/article/${articleId}`,
+      url: `${BaseUrl}/article/${slug}`,
       images: [
         {
           url: article.media[0].key,
@@ -58,8 +57,8 @@ export async function generateMetadata(
   };
 }
 
-export default async function Article({ params: { articleId } }: Params) {
-  const { article } = await getArticleById(articleId);
+export default async function Article({ params: { slug } }: Params) {
+  const { article } = await getArticleBySlug(slug);
 
   return (
     <>

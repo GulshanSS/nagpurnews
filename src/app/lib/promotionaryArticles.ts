@@ -7,14 +7,9 @@ export async function getAllPromotionaryArticlesAsBanners() {
   return res.json();
 }
 
-export async function getPromotionaryArticleById(
-  promotionartArticleId: string
-) {
-  const res = await fetch(
-    `${BASE_URL}/promotionary-article/${promotionartArticleId}`,
-    {
-      cache: "no-store",
-    }
-  );
+export async function getPromotionaryArticleBySlug(slug: string) {
+  const res = await fetch(`${BASE_URL}/promotionary-article/${slug}`, {
+    cache: "no-store",
+  });
   return res.json();
 }
