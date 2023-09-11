@@ -28,6 +28,9 @@ const Pagination = ({ page, pages, changePage }: Props) => {
           >
             <BiLeftArrow />
           </button>
+          <button className="w-10 h-10 text-sm font-bold flex justify-center items-center  border border-slate-500 rounded-full cursor-not-allowed">
+            {page}
+          </button>
           <button
             className="w-10 h-10 text-sm font-bold flex justify-center items-center  border border-slate-500 rounded-full disabled:bg-slate-500 disabled:text-primary-50 disabled:cursor-not-allowed"
             onClick={() => {
