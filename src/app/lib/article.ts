@@ -14,8 +14,8 @@ export async function getLatestArticles() {
   return res.json();
 }
 
-export async function getMainFeedArticles() {
-  const res = await fetch(`${BASE_URL}/article`, {
+export async function getMainFeedArticles(page: number) {
+  const res = await fetch(`${BASE_URL}/article?page=${page}`, {
     cache: "no-store",
   });
   return res.json();
