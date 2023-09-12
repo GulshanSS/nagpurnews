@@ -16,7 +16,7 @@ export async function generateMetadata(
   { params: { slug } }: Params,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { category } = await getAllArticlesForCategory(slug);
+  const { category } = await getAllArticlesForCategory(slug, 1);
   return {
     title: category.title,
     alternates: {
@@ -27,15 +27,13 @@ export async function generateMetadata(
 
 export default async function Category({ params: { slug } }: Params) {
   const categoriesData = getAllCategories();
-  const categoriesWithArticleData = getAllArticlesForCategory(slug);
 
-  const [{ categories: allCategories }, { category: categoryWithArticles }] =
-    await Promise.all([categoriesData, categoriesWithArticleData]);
+  const { categories: allCategories } = await categoriesData;
 
   const newCategories = [...allCategories].filter((ele) => ele.slug !== slug);
   return (
     <>
-      <CategoryFeed category={categoryWithArticles} />
+      <CategoryFeed slug={slug} />
       <ExploreCategory categories={newCategories} />
     </>
   );
