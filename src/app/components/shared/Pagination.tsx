@@ -4,12 +4,13 @@ type Props = {
   page: number;
   pages: number;
   changePage: Function;
+  top: number;
 };
 
-const Pagination = ({ page, pages, changePage }: Props) => {
+const Pagination = ({ page, pages, changePage, top }: Props) => {
   const scrollToTop = () => {
     window.scrollTo({
-      top: 500,
+      top: top,
       behavior: "smooth",
     });
   };

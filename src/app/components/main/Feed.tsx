@@ -36,7 +36,7 @@ export default function Feed() {
           ))}
       </div>
       <div className="mx-auto py-4">
-        <Pagination page={page} pages={pages} changePage={setPage} />
+        <Pagination top={500} page={page} pages={pages} changePage={setPage} />
       </div>
       <ScrollButton />
     </div>

@@ -47,7 +47,7 @@ export default function CategoryFeed({ slug }: Props) {
           ))}
       </div>
       <div className="mx-auto py-4">
-        <Pagination page={page} pages={pages} changePage={setPage} />
+        <Pagination top={0} page={page} pages={pages} changePage={setPage} />
       </div>
       <ScrollButton />
     </div>
