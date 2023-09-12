@@ -10,7 +10,7 @@ import {
 
 export default function Footer() {
   return (
-    <div className="bottom-0 w-full bg-primary-900">
+    <div className="bottom-0 pb-16 md:pb-0 w-full bg-primary-900">
       <div className="max-w-screen-xl mx-auto flex gap-4 flex-col md:flex-row md:justify-between items-center p-4">
         <span className="w-full flex justify-center md:justify-start text-[16px] text-primary-50 order-2 md:order-1 mx-2">
           2023 &copy; Copyright Nagpur News
