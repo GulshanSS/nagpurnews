@@ -9,6 +9,7 @@ import LatestFeed from "./components/Latest/LatestFeed";
 import PromotionaryArticleFeed from "./components/PromotionaryArticle/PromotionaryArticleFeed";
 import { getLatestArticles } from "./lib/article";
 import { getAllPromotionaryArticlesAsBanners } from "./lib/promotionaryArticles";
+import BottomNav from "./components/shared/BottomNav";
 
 const poppins = Poppins({ weight: "500", subsets: ["latin-ext"] });
 
@@ -46,7 +47,7 @@ export default async function RootLayout({
         ></script>
       </head>
       <body className={poppins.className}>
-        <Navbar categories={categories} />
+        <Navbar />
         <SubNav />
         <main className="max-w-screen-xl min-h-screen flex flex-wrap mx-auto text-3xl my-10 font-bold">
           <div className="md:w-2/3">{children}</div>
@@ -58,6 +59,7 @@ export default async function RootLayout({
           </div>
         </main>
         <Footer />
+        <BottomNav categories={categories} />
       </body>
     </html>
   );
