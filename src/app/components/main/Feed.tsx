@@ -35,7 +35,7 @@ export default function Feed() {
             <ArticleCard key={article.id} article={article} />
           ))}
       </div>
-      <div className="w-80 mx-auto py-4">
+      <div className="mx-auto py-4">
         <Pagination page={page} pages={pages} changePage={setPage} />
       </div>
       <ScrollButton />
