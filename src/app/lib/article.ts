@@ -14,6 +14,13 @@ export async function getLatestArticles() {
   return res.json();
 }
 
+export async function getArticlesByKeyword(keyword: string) {
+  const res = await fetch(`${BASE_URL}/article/search/${keyword}`, {
+    cache: "no-store",
+  });
+  return res.json();
+}
+
 export async function getMainFeedArticles(page: number) {
   const res = await fetch(`${BASE_URL}/article?page=${page}`, {
     cache: "no-store",
