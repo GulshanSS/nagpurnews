@@ -50,8 +50,8 @@ export default async function RootLayout({
         <Navbar />
         <SubNav />
         <main className="max-w-screen-xl min-h-screen flex flex-wrap mx-auto text-3xl my-10 font-bold">
-          <div className="md:w-2/3">{children}</div>
-          <div className="md:w-1/3">
+          <div className="w-full md:w-2/3">{children}</div>
+          <div className="w-full md:w-1/3">
             {latestArticles && <LatestFeed articles={latestArticles} />}
             <PromotionaryArticleFeed
               promotionaryArticles={promotionaryArticlesAsBanner}
