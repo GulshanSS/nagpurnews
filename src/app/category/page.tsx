@@ -1,5 +1,5 @@
 import { Category } from "../../../types";
-import CategoryDetails from "../components/shared/Category";
+import CategoryDetails from "../components/shared/CategoryDetails";
 import { getAllCategoriesWithMinArticles } from "../lib/category";
 
 export default async function CategoryPage() {
