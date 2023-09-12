@@ -28,12 +28,14 @@ export default function BottomNav({ categories }: Props) {
               <span className="text-primary-50 text-[10px]">Home</span>
             </div>
           </Link>
-          <div className="flex flex-col justify-center items-center gap-2">
-            <span className="text-primary-50 text-xl">
-              <IoNewspaperOutline />
-            </span>
-            <span className="text-primary-50 text-[10px]">Category</span>
-          </div>
+          <Link href="/category">
+            <div className="flex flex-col justify-center items-center gap-2">
+              <span className="text-primary-50 text-xl">
+                <IoNewspaperOutline />
+              </span>
+              <span className="text-primary-50 text-[10px]">Category</span>
+            </div>
+          </Link>
           <Link href="/search">
             <div className="flex flex-col justify-center items-center gap-2">
               <span className="text-primary-50 text-xl">
