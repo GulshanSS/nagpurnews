@@ -30,7 +30,7 @@ export default function Navbar() {
           </Link>
           <Link href="/search">
             <div className="w-24 md:w-64 flex flex-row justify-between items-center p-1.5 md:p-2.5 text-primary-900 bg-primary-100 border border-primary-600 rounded-full">
-              <span className="text-sm">Search</span>
+              <span className="text-sm px-1.5">Search</span>
               <span className="text-xl">
                 <FiSearch />
               </span>
