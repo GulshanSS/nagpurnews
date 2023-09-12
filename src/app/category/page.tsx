@@ -7,7 +7,7 @@ export default async function CategoryPage() {
 
   return (
     <>
-      <div className="mx-2 py-2">
+      <div className="mx-4 py-2">
         <div className="flex flex-col gap-4">
           {categories &&
             categories.map((category: Category) => (
