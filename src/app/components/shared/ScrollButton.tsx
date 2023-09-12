@@ -29,7 +29,7 @@ export default function ScrollButton() {
         onClick={scrollToTop}
         className={` ${
           visilble ? "visible" : "invisible"
-        } fixed bottom-0 right-0 m-5 flex justify-center items-center p-2 rounded-full text-3xl bg-primary-800 text-primary-50 shadow-lg`}
+        } fixed bottom-16 right-0 m-5 flex justify-center items-center p-2 rounded-full text-3xl bg-primary-800 text-primary-50 shadow-lg`}
       >
         <BsArrowUpCircleFill />
       </div>
