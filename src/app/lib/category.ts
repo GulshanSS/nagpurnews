@@ -14,8 +14,8 @@ export async function getAllCategoriesWithMinArticles() {
   return res.json();
 }
 
-export async function getAllArticlesForCategory(slug: string) {
-  const res = await fetch(`${BASE_URL}/${slug}`, {
+export async function getAllArticlesForCategory(slug: string, page: number) {
+  const res = await fetch(`${BASE_URL}/${slug}?page=${page}`, {
     cache: "no-store",
   });
   return res.json();
