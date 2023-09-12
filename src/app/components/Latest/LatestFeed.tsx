@@ -1,6 +1,5 @@
 import React from "react";
 import { Article } from "../../../../types";
-import Link from "next/link";
 import LatestNewsCard from "./LatestNewsCard";
 
 type Props = {
