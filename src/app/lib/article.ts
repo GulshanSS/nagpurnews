@@ -14,10 +14,13 @@ export async function getLatestArticles() {
   return res.json();
 }
 
-export async function getArticlesByKeyword(keyword: string) {
-  const res = await fetch(`${BASE_URL}/article/search/${keyword}`, {
-    cache: "no-store",
-  });
+export async function getArticlesByKeyword(keyword: string, page: number) {
+  const res = await fetch(
+    `${BASE_URL}/article/search/${keyword}?page=${page}`,
+    {
+      cache: "no-store",
+    }
+  );
   return res.json();
 }
 
