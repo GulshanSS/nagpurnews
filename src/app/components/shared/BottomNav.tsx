@@ -18,7 +18,7 @@ export default function BottomNav({ categories }: Props) {
   return (
     <>
       <SideNav open={open} setOpen={setOpen} categories={categories} />
-      <div className="block fixed md:hidden bottom-0 w-full bg-primary-900 p-2.5">
+      <div className="block fixed md:hidden bottom-0 w-full bg-primary-900 px-3.5 py-2.5">
         <div className="w-full flex justify-between items-center">
           <Link href="/">
             <div className="flex flex-col justify-center items-center gap-2">
