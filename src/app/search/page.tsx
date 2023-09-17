@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Article } from "../../../types";
 import { FiSearch } from "react-icons/fi";
 import { getArticlesByKeyword } from "../lib/article";
@@ -17,6 +17,8 @@ export default function Search() {
 
   const debouncedSearchQuery = useDebounce(keyword, 1000);
 
+  const searchInputRef = useRef<any>(null);
+
   useEffect(() => {
     if (debouncedSearchQuery !== "") {
       (async () => {
@@ -31,6 +33,10 @@ export default function Search() {
     }
   }, [debouncedSearchQuery, page]);
 
+  useEffect(() => {
+    searchInputRef.current.focus();
+  }, []);
+
   if (loading) {
     return <SkeletonCard />;
   }
@@ -40,7 +46,7 @@ export default function Search() {
       <div className="mx-4">
         <div className="flex bg-primary-50 justify-center items-center rounded-full border border-primary-600">
           <input
-            autoFocus
+            ref={searchInputRef}
             className="text-sm px-4 py-2.5 overflow-hidden rounded-full w-full bg-inherit placeholder:text-primary-600 placeholder:font-extrabold font-medium focus:outline-none"
             type="text"
             value={keyword}
