@@ -38,10 +38,14 @@ export default function CategoryFeed({ slug }: Props) {
       <div className="mb-6 font-semibold text-2xl text-primary-800 uppercase">
         {category && category.name}
       </div>
-      <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+      <div className="w-full flex flex-wrap justify-center lg:justify-start gap-4">
         {category &&
           category.article.map((article) => (
-            <Link key={article.id} href={`/article/${article.slug}`}>
+            <Link
+              className="w-full"
+              key={article.id}
+              href={`/article/${article.slug}`}
+            >
               <ArticleCardForCategory article={article} />
             </Link>
           ))}

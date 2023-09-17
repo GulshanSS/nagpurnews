@@ -7,7 +7,7 @@ type Props = {
 
 export default function ArticleCardForCategory({ article }: Props) {
   return (
-    <div className="relative overflow-hidden w-[400px] md:w-96 flex flex-col justify-center gap-2 rounded-md cursor-pointer bg-black">
+    <div className="relative overflow-hidden md:w-96 flex flex-col justify-center gap-2 rounded-md cursor-pointer bg-black">
       {article.media[0].type.startsWith("image/") && (
         <img
           loading="lazy"
