@@ -23,13 +23,13 @@ export default function Navbar() {
                 className="w-6 md:w-8 mr-3 rounded-full ring-2 ring-primary-600"
                 alt="Nagpur News Logo"
               />
-              <span className="self-center text-xl md:text-2xl text-primary-900 font-semibold whitespace-nowrap capitalize">
+              <span className="self-center text-xl md:text-2xl text-primary-800 font-bold whitespace-nowrap uppercase">
                 Nagpur News
               </span>
             </div>
           </Link>
           <Link href="/search">
-            <div className="w-24 md:w-64 flex flex-row justify-between items-center p-1.5 md:p-2.5 text-primary-900 bg-primary-100 border border-primary-600 rounded-full">
+            <div className="w-24 md:w-64 flex flex-row justify-between items-center p-1.5 md:p-2.5 text-primary-800 bg-primary-50 border border-primary-600 rounded-full">
               <span className="text-sm px-1.5">Search</span>
               <span className="text-xl">
                 <FiSearch />
@@ -37,7 +37,7 @@ export default function Navbar() {
             </div>
           </Link>
           <div className="hidden md:flex justify-center items-center gap-2 mx-2">
-            <span className="hidden lg:flex text-sm font-bold uppercase text-primary-900">
+            <span className="hidden lg:flex text-sm font-bold uppercase text-primary-800">
               Follow us on
             </span>
             <SocialLinkForPromotionaryArticle
