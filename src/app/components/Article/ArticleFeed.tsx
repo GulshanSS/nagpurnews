@@ -27,7 +27,7 @@ export default function ArticleFeed({ article }: Props) {
         </div>
       </div>
       <div
-        className="text-[16px] font-light text-primary-800 leading-6 text-justify mb-6"
+        className="text-[16px] font-light text-primary-800 leading-6 text-justify mb-6 article_feed"
         dangerouslySetInnerHTML={{ __html: article.content }}
       ></div>
       <div className="w-full flex justify-center md:justify-start gap-2 items-center text-center text-red-600 text-sm md:mx-2 mb-4 uppercase">
