@@ -34,7 +34,9 @@ export default function Search() {
   }, [debouncedSearchQuery, page]);
 
   useEffect(() => {
-    searchInputRef.current.focus();
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
   }, []);
 
   if (loading) {
