@@ -37,7 +37,7 @@ export default function Share({ url, title }: Props) {
 
   return (
     <>
-      <ul className="flex gap-8 justify-between md:justify-start items-center text-gray-500 mb-4 mx-2.5">
+      <ul className="flex gap-8 justify-between md:justify-start items-center text-primary-800 mb-4 mx-2.5 py-2 md:py-0">
         <li>
           <a
             target="_blank"
