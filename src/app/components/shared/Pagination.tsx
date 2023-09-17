@@ -20,7 +20,9 @@ const Pagination = ({ page, pages, changePage, top }: Props) => {
       <>
         <div className="mx-2 flex justify-center items-center gap-2">
           <button
-            className="w-10 h-10 text-sm font-bold flex justify-center items-center  border border-slate-500 rounded-full disabled:bg-slate-500 disabled:text-primary-50 disabled:cursor-not-allowed"
+            className={`${
+              page === 1 ? "hidden" : "visible"
+            } w-10 h-10 text-sm text-primary-100 bg-primary-800 font-bold flex justify-center items-center rounded-full`}
             onClick={() => {
               scrollToTop();
               changePage((page: number) => page - 1);
@@ -29,11 +31,13 @@ const Pagination = ({ page, pages, changePage, top }: Props) => {
           >
             <BiLeftArrow />
           </button>
-          <button className="w-10 h-10 text-sm font-bold flex justify-center items-center  border border-slate-500 rounded-full cursor-not-allowed">
+          <button className="w-10 h-10 text-sm text-primary-800 bg-primary-100 border border-primary-600 font-bold flex justify-center items-center rounded-full cursor-not-allowed">
             {page}
           </button>
           <button
-            className="w-10 h-10 text-sm font-bold flex justify-center items-center  border border-slate-500 rounded-full disabled:bg-slate-500 disabled:text-primary-50 disabled:cursor-not-allowed"
+            className={`${
+              page === pages ? "hidden" : "visible"
+            } w-10 h-10 text-sm text-primary-100 bg-primary-800 font-bold flex justify-center items-center rounded-full`}
             onClick={() => {
               scrollToTop();
               changePage((page: number) => page + 1);
