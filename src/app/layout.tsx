@@ -49,7 +49,7 @@ export default async function RootLayout({
       <body className={poppins.className}>
         <Navbar />
         <SubNav />
-        <main className="max-w-screen-xl min-h-screen flex flex-wrap mx-auto text-3xl my-10 font-bold">
+        <main className="max-w-screen-xl min-h-screen flex flex-wrap mx-auto text-3xl my-4 font-bold">
           <div className="w-full md:w-2/3">{children}</div>
           <div className="w-full md:w-1/3">
             {latestArticles && <LatestFeed articles={latestArticles} />}
