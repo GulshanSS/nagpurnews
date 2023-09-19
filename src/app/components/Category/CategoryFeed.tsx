@@ -42,7 +42,7 @@ export default function CategoryFeed({ slug }: Props) {
         {category &&
           category.article.map((article) => (
             <Link
-              className="w-full"
+              className="w-full md:w-96"
               key={article.id}
               href={`/article/${article.slug}`}
             >
