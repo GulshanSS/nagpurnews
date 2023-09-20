@@ -27,7 +27,7 @@ export default function CategoryFeed({ slug }: Props) {
       setPages(data.pages);
       setLoading(false);
     })();
-  }, [page]);
+  }, [page, slug]);
 
   if (loading) {
     return <SkeletonCard />;
