@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Article } from "../../../types";
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiX } from "react-icons/fi";
 import { getArticlesByKeyword } from "../lib/article";
 import SkeletonCard from "../components/shared/SkeletonCard";
 import { useDebounce } from "usehooks-ts";
@@ -47,16 +47,24 @@ export default function Search() {
     <>
       <div className="mx-4">
         <div className="flex bg-primary-50 justify-center items-center rounded-full border border-primary-600">
+          <span className="text-lg text-primary-800 p-1.5 ml-1.5 shadow-sm">
+            <FiSearch />
+          </span>
           <input
             ref={searchInputRef}
-            className="text-sm px-4 py-2.5 overflow-hidden rounded-full w-full bg-inherit placeholder:text-primary-600 placeholder:font-extrabold font-medium focus:outline-none"
+            className="text-sm px-1 py-2.5 overflow-hidden rounded-full w-full bg-inherit placeholder:text-primary-600 placeholder:font-extrabold font-medium focus:outline-none"
             type="text"
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="Enter Search Keyword"
           />
-          <span className="text-lg text-primary-100 bg-primary-800 rounded-full p-1.5 mr-1.5 shadow-sm">
-            <FiSearch />
+          <span
+            className={` ${
+              keyword !== "" ? "visible" : "hidden"
+            } text-lg text-primary-100 bg-primary-800 rounded-full p-1.5 mr-1.5 shadow-sm`}
+            onClick={() => setKeyword("")}
+          >
+            <FiX />
           </span>
         </div>
         {debouncedSearchQuery !== "" && (
