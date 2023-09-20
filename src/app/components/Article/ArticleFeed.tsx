@@ -1,8 +1,13 @@
 import React from "react";
 import { Article } from "../../../../types";
-import Carousel from "../shared/Carousel";
 import Share from "../shared/Share";
 import { BsShare } from "react-icons/bs";
+
+import dynamic from "next/dynamic";
+
+const Carousel = dynamic(() => import("../shared/Carousel"), {
+  ssr: false,
+});
 
 type Props = {
   article: Article;
