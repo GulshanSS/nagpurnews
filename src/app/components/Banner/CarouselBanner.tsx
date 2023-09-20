@@ -49,7 +49,7 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
       }
     }, 5000);
     return () => clearTimeout(timerRef.current);
-  }, [currentIndex]);
+  }, [currentIndex, slides.length]);
 
   return (
     <div className="w-full group">
