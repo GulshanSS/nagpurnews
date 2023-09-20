@@ -14,6 +14,15 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
   dayjs.extend(relativeTime);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+  const checkDimension = (imgUrl: string) => {
+    const img = new Image();
+    img.src = imgUrl;
+    if (img.height - img.width < 100) {
+      return true;
+    }
+    return false;
+  };
+
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -52,7 +61,11 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
                 <img
                   loading="lazy"
                   alt={slides[currentIndex].title}
-                  className="w-full h-full overflow-hidden object-cover duration-500 rounded-md"
+                  className={`${
+                    checkDimension(slides[currentIndex].media[0].key)
+                      ? "object-cover"
+                      : "object-contain"
+                  }  w-full h-full overflow-hidden duration-500 rounded-md`}
                   src={slides[currentIndex].media[0].key}
                 />
               </div>
