@@ -29,7 +29,7 @@ export default function Share({ url, title }: Props) {
     } else if (navigator.canShare(shareData)) {
       setShowNativeShare(true);
     }
-  }, []);
+  }, [shareData]);
 
   const handleNativeShare = () => {
     navigator.share(shareData);
