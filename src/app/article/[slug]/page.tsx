@@ -1,6 +1,6 @@
 import ArticleFeed from "@/app/components/Article/ArticleFeed";
 import { getArticleBySlug } from "@/app/lib/article";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import React from "react";
 
 const BaseUrl = process.env.NEXT_PUBLIC_CLIENT_URI as string;
@@ -11,10 +11,9 @@ type Params = {
   };
 };
 
-export async function generateMetadata(
-  { params: { slug } }: Params,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params: { slug },
+}: Params): Promise<Metadata> {
   const { article } = await getArticleBySlug(slug);
   return {
     title: article.title,

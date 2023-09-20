@@ -1,9 +1,7 @@
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import SearchFeed from "../components/Search/SearchFeed";
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export function generateMetadata(): Metadata {
   return {
     title: "Search | Nagpur News",
     alternates: {

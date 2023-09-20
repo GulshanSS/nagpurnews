@@ -4,7 +4,7 @@ import {
   getAllArticlesForCategory,
   getAllCategories,
 } from "@/app/lib/category";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 type Params = {
   params: {
@@ -12,10 +12,9 @@ type Params = {
   };
 };
 
-export async function generateMetadata(
-  { params: { slug } }: Params,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params: { slug },
+}: Params): Promise<Metadata> {
   const { category } = await getAllArticlesForCategory(slug, 1);
   return {
     title: `${category.name} | Nagpur News`,

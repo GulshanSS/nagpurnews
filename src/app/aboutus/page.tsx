@@ -1,9 +1,7 @@
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import AboutUsFeed from "../components/AboutUs/AboutUsFeed";
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export function generateMetadata(): Metadata {
   return {
     title: "About Us | Nagpur News",
     alternates: {

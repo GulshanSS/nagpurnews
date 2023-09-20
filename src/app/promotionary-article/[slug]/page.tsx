@@ -1,7 +1,7 @@
 import Share from "@/app/components/shared/Share";
 import SocialLinkForPromotionaryArticle from "@/app/components/shared/SocialLinkForPromotionaryArticle";
 import { getPromotionaryArticleBySlug } from "@/app/lib/promotionaryArticles";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import {
   BsGlobe,
   BsInstagram,
@@ -17,10 +17,9 @@ type Params = {
   };
 };
 
-export async function generateMetadata(
-  { params: { slug } }: Params,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params: { slug },
+}: Params): Promise<Metadata> {
   const { promotionaryArticle } = await getPromotionaryArticleBySlug(slug);
   return {
     title: promotionaryArticle.title,

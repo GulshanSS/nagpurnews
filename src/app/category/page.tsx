@@ -1,11 +1,9 @@
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import { Category } from "../../../types";
 import CategoryDetails from "../components/shared/CategoryDetails";
 import { getAllCategoriesWithMinArticles } from "../lib/category";
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export function generateMetadata(): Metadata {
   return {
     title: "Categories | Nagpur News",
     alternates: {

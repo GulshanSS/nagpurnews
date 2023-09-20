@@ -1,15 +1,13 @@
 import dynamic from "next/dynamic";
 import { getAllArticlesAsBanners } from "./lib/article";
 import Feed from "./components/main/Feed";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 const BannerFeed = dynamic(() => import("./components/Banner/BannerFeed"), {
   ssr: false,
 });
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export function generateMetadata(): Metadata {
   return {
     title: "Home | Nagpur News",
     alternates: {
