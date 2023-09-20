@@ -29,7 +29,8 @@ export default function Share({ url, title }: Props) {
     } else if (navigator.canShare(shareData)) {
       setShowNativeShare(true);
     }
-  }, [shareData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleNativeShare = () => {
     navigator.share(shareData);
