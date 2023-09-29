@@ -44,7 +44,7 @@ export default async function Search() {
     <>
       <SearchFeed />
       {tags && (
-        <div className="mx-4">
+        <div className="mx-4 mb-5">
           <AllTags headline="Explore Tags" tags={tags} />
         </div>
       )}

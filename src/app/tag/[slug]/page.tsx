@@ -55,7 +55,7 @@ export default async function Tag({ params: { slug } }: Params) {
     <>
       <TagFeed slug={slug} />
       {tags && (
-        <div className="mx-4">
+        <div className="mx-4 mb-5">
           <AllTags headline="Explore Tags" tags={newTags} />
         </div>
       )}
