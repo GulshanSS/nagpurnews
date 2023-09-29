@@ -17,7 +17,7 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
   const checkDimension = (imgUrl: string) => {
     const img = new Image();
     img.src = imgUrl;
-    if (img.height - img.width < 100) {
+    if (img.height < img.width) {
       return true;
     }
     return false;
