@@ -53,10 +53,10 @@ export default async function Home() {
   return (
     <>
       <BannerFeed articles={articlesAsBanners} />
+      <Feed />
       <div className="mx-4 mb-5 bg-primary-50 shadow-sm rounded-md px-5 pb-5">
         <AllTags headline="Explore Tags" tags={tags} />
       </div>
-      <Feed />
     </>
   );
 }
