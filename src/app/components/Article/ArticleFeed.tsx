@@ -4,6 +4,7 @@ import Share from "../shared/Share";
 import { BsShare } from "react-icons/bs";
 
 import dynamic from "next/dynamic";
+import AllTags from "../Tag/AllTags";
 
 const Carousel = dynamic(() => import("../shared/Carousel"), {
   ssr: false,
@@ -17,7 +18,7 @@ export default function ArticleFeed({ article }: Props) {
   return (
     <div className="mx-2 p-2 rounded-md mb-6">
       <Carousel slides={article.media} />
-      <div className="font-semibold text-justify text-xl md:text-2xl text-primary-800">
+      <div className="font-semibold text-justify tracking-wide text-xl md:text-2xl text-primary-800">
         {article.title}
       </div>
       <div className="text-gray-500 font-semibold uppercase">
@@ -35,11 +36,14 @@ export default function ArticleFeed({ article }: Props) {
         className="text-[16px] font-light text-primary-800 leading-6 text-justify mb-6 article_feed"
         dangerouslySetInnerHTML={{ __html: article.content }}
       ></div>
+      <div className="mb-5">
+        {article.tag && <AllTags headline="Related Tags" tags={article.tag} />}
+      </div>
       <div className="w-full flex justify-center md:justify-start gap-2 items-center text-center text-red-600 text-sm md:mx-2 mb-4 uppercase">
         <span>
           <BsShare />
         </span>
-        Share
+        <span className="tracking-wide">Share</span>
       </div>
       <Share url={`article/${article.slug}`} title={article.title} />
     </div>
