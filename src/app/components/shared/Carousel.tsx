@@ -12,15 +12,6 @@ type Props = {
 export default function Carousel({ slides }: Props) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  const checkDimension = (imgUrl: string) => {
-    const img = new Image();
-    img.src = imgUrl;
-    if (img.height < img.width) {
-      return true;
-    }
-    return false;
-  };
-
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -41,11 +32,7 @@ export default function Carousel({ slides }: Props) {
             <img
               loading="lazy"
               alt={slides[currentIndex].articleId}
-              className={`${
-                checkDimension(slides[currentIndex].key)
-                  ? "object-cover"
-                  : "object-contain"
-              } w-full h-full overflow-hidden rounded-md duration-500`}
+              className="object-cover w-full h-full overflow-hidden rounded-md duration-500"
               src={slides[currentIndex].key}
             />
           )}

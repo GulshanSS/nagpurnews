@@ -1,4 +1,3 @@
-import React from "react";
 import { Article } from "../../../../types";
 
 type Props = {
@@ -6,25 +5,12 @@ type Props = {
 };
 
 export default function ArticleCardForCategory({ article }: Props) {
-  const checkDimension = (imgUrl: string) => {
-    const img = new Image();
-    img.src = imgUrl;
-    if (img.height < img.width) {
-      return true;
-    }
-    return false;
-  };
-
   return (
     <div className="relative overflow-hidden md:w-96 flex flex-col justify-center gap-2 rounded-md cursor-pointer bg-black">
       {article.media[0].type.startsWith("image/") && (
         <img
           loading="lazy"
-          className={`w-full h-64 overflow-hidden text-sm ${
-            checkDimension(article.media[0].key)
-              ? "object-cover"
-              : "object-contain"
-          } rounded-md`}
+          className="w-full h-64 overflow-hidden text-sm object-cover rounded-md"
           alt={article.title}
           src={article.media[0].key}
         />
