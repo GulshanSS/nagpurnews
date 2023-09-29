@@ -68,14 +68,6 @@ export default function SearchFeed() {
             <FiX />
           </span>
         </div>
-        {debouncedSearchQuery !== "" && (
-          <span className="text-sm text-medium">
-            Search Keyword :{" "}
-            <span className="text-bold text-red-500">
-              {debouncedSearchQuery}
-            </span>
-          </span>
-        )}
         <div className="flex flex-col gap-2 py-4">
           {articles &&
             articles.length > 0 &&
