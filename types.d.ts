@@ -14,6 +14,7 @@ export type Tag = {
   slug: string;
   active: boolean;
   setAsCategory: boolean;
+  article: Article[];
   createdAt: Date;
   updatedAt: Date;
 };
