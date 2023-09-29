@@ -36,5 +36,6 @@
 
 .article_feed > a {
   color: blue;
+  font-weight: bold;
   text-decoration: underline;
 }
