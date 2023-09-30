@@ -82,13 +82,17 @@ export default async function RootLayout({
         <main className="max-w-screen-xl min-h-screen flex flex-wrap mx-auto text-3xl my-4 font-bold">
           <div className="w-full md:w-2/3">{children}</div>
           <div className="w-full md:w-1/3">
-            <div className="mx-4 mb-5">
-              <AllTags headline="Explore Tags" tags={tags} />
-            </div>
+            {tags && (
+              <div className="mx-4 mb-5">
+                <AllTags headline="Explore Tags" tags={tags} />
+              </div>
+            )}
             {latestArticles && <LatestFeed articles={latestArticles} />}
-            <PromotionaryArticleFeed
-              promotionaryArticles={promotionaryArticlesAsBanner}
-            />
+            {promotionaryArticlesAsBanner && (
+              <PromotionaryArticleFeed
+                promotionaryArticles={promotionaryArticlesAsBanner}
+              />
+            )}
           </div>
         </main>
         <Footer />

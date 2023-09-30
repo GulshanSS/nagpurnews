@@ -1,6 +1,5 @@
-import AllTags from "@/app/components/Tag/AllTags";
 import TagFeed from "@/app/components/Tag/TagFeed";
-import { getAllArticlesForTag, getAllTags } from "@/app/lib/tag";
+import { getAllArticlesForTag } from "@/app/lib/tag";
 import { Metadata } from "next";
 
 type Params = {
@@ -46,19 +45,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function Tag({ params: { slug } }: Params) {
-  const { tags } = await getAllTags();
-
-  const newTags = [...tags].filter((ele) => ele.slug !== slug);
-
+export default function Tag({ params: { slug } }: Params) {
   return (
     <>
       <TagFeed slug={slug} />
-      {tags && (
-        <div className="mx-4 mb-5">
-          <AllTags headline="Explore Tags" tags={newTags} />
-        </div>
-      )}
     </>
   );
 }
