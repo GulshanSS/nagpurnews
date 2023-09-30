@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 import SearchFeed from "../components/Search/SearchFeed";
-import AllTags from "../components/Tag/AllTags";
-import { getAllTags } from "../lib/tag";
 
 export function generateMetadata(): Metadata {
   return {
@@ -37,17 +35,10 @@ export function generateMetadata(): Metadata {
   };
 }
 
-export default async function Search() {
-  const { tags } = await getAllTags();
-
+export default function Search() {
   return (
     <>
       <SearchFeed />
-      {tags && (
-        <div className="mx-4 mb-5">
-          <AllTags headline="Explore Tags" tags={tags} />
-        </div>
-      )}
     </>
   );
 }
