@@ -17,7 +17,7 @@ type Props = {
 export default function ArticleFeed({ article }: Props) {
   return (
     <div className="mx-2 p-2 rounded-md mb-6">
-      <Carousel slides={article.media} />
+      {article.media.length > 0 && <Carousel slides={article.media} />}
       <div className="font-semibold text-justify tracking-wide text-xl md:text-2xl text-primary-800">
         {article.title}
       </div>
@@ -32,10 +32,40 @@ export default function ArticleFeed({ article }: Props) {
           - {article.author}
         </div>
       </div>
+      {article.youtubeVideoUrl !== "" && (
+        <iframe
+          src={article.youtubeVideoUrl}
+          allowFullScreen
+          title="video"
+          style={{
+            borderRadius: "10px",
+            width: "100%",
+            minHeight: "400px",
+            margin: "10px 0",
+          }}
+        />
+      )}
       <div
         className="text-[16px] font-light text-primary-800 leading-6 text-justify mb-6 article_feed"
         dangerouslySetInnerHTML={{ __html: article.content }}
       ></div>
+      {article.articleSection.length > 0 &&
+        article.articleSection.map((articleSection) => (
+          <div key={articleSection.id}>
+            {articleSection.title && (
+              <div className="font-semibold text-justify tracking-wide mb-4 text-lg text-primary-800">
+                {articleSection.title}
+              </div>
+            )}
+            {articleSection.media.length > 0 && (
+              <Carousel slides={articleSection.media} />
+            )}
+            <div
+              className="text-[16px] font-light text-primary-800 leading-6 text-justify mb-6 article_feed"
+              dangerouslySetInnerHTML={{ __html: articleSection.content }}
+            ></div>
+          </div>
+        ))}
       <div className="mb-5">
         {article.tag && <AllTags headline="Related Tags" tags={article.tag} />}
       </div>
