@@ -26,24 +26,26 @@ export default function LatestNewsCard({ article }: Props) {
             {dayjs(article.updatedAt).from(Date.now())}
           </div>
         </div>
-        {article.media[0].type.startsWith("image/") && (
-          <img
-            className="text-[5px] w-20 h-20 object-cover rounded-md"
-            alt={article.title}
-            src={article.media[0].key}
-          />
-        )}
-        {article.media[0].type.startsWith("video/") && (
-          <video
-            playsInline
-            className="flex justify-center w-20 h-20 bg-black rounded-md"
-            src={article.media[0].key}
-            loop
-            controls
-            autoPlay
-            muted
-          />
-        )}
+        {article.media.length > 0 &&
+          article.media[0].type.startsWith("image/") && (
+            <img
+              className="text-[5px] w-20 h-20 object-cover rounded-md"
+              alt={article.title}
+              src={article.media[0].key}
+            />
+          )}
+        {article.media.length > 0 &&
+          article.media[0].type.startsWith("video/") && (
+            <video
+              playsInline
+              className="flex justify-center w-20 h-20 bg-black rounded-md"
+              src={article.media[0].key}
+              loop
+              controls
+              autoPlay
+              muted
+            />
+          )}
       </div>
     </Link>
   );

@@ -49,11 +49,11 @@ export async function generateMetadata({
       title: article.title,
       images: [
         {
-          url: article.media[0].key,
+          url: article.media.length > 0 ? article.media[0].key : "",
           alt: article.tittle,
           width: 800,
           height: 600,
-          type: article.media[0].type,
+          type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
     },
@@ -63,17 +63,17 @@ export async function generateMetadata({
       url: `${BaseUrl}/article/${slug}`,
       images: [
         {
-          url: article.media[0].key,
+          url: article.media.length > 0 ? article.media[0].key : "",
           alt: article.tittle,
           width: 800,
-          type: article.media[0].type,
+          type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
       videos: [
         {
-          url: article.media[0].key,
+          url: article.media.length > 0 ? article.media[0].key : "",
           width: 800,
-          type: article.media[0].type,
+          type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
       siteName: "Nagpur News",

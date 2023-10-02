@@ -39,26 +39,31 @@ export default function ArticleCard({ article }: Props) {
               dangerouslySetInnerHTML={{ __html: article.content }}
             ></div>
           </div>
-          {article.media[0].type.startsWith("image/") && (
-            <img
-              loading="lazy"
-              className="w-[100px] md:w-[150px] h-24 text-sm  object-cover rounded-md"
-              alt={article.title}
-              src={article.media[0].key}
-            />
-          )}
-          {article.media[0].type.startsWith("video/") && (
-            <video
-              playsInline
-              className="flex justify-center min-w-[100px] md:min-w-[150px] h-24 bg-black rounded-md"
-              controls
-              loop
-              autoPlay
-              muted
-            >
-              <source src={article.media[0].key} type={article.media[0].type} />
-            </video>
-          )}
+          {article.media.length > 0 &&
+            article.media[0].type.startsWith("image/") && (
+              <img
+                loading="lazy"
+                className="w-[100px] md:w-[150px] h-24 text-sm  object-cover rounded-md"
+                alt={article.title}
+                src={article.media[0].key}
+              />
+            )}
+          {article.media.length > 0 &&
+            article.media[0].type.startsWith("video/") && (
+              <video
+                playsInline
+                className="flex justify-center min-w-[100px] md:min-w-[150px] h-24 bg-black rounded-md"
+                controls
+                loop
+                autoPlay
+                muted
+              >
+                <source
+                  src={article.media[0].key}
+                  type={article.media[0].type}
+                />
+              </video>
+            )}
         </div>
       </Link>
       <Share url={`article/${article.slug}`} title={article.title} />
