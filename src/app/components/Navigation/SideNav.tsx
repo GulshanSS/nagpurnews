@@ -37,12 +37,17 @@ export default function SideNav({ open, setOpen, categories }: Props) {
                 <FiChevronsRight />
               </button>
             </span>
-            <li className="px-4 py-1.5 flex items-center border-b border-primary-600">
-              <span className="mr-2">
-                <BiSolidCategory />
-              </span>
-              Categories
-            </li>
+            <Link href="/category">
+              <li
+                onClick={() => setOpen(!open)}
+                className="px-4 py-1.5 flex items-center border-b border-primary-600"
+              >
+                <span className="mr-2">
+                  <BiSolidCategory />
+                </span>
+                Categories
+              </li>
+            </Link>
             <ul className="space-y-2 overflow-y-auto font-medium flex flex-col items-start gap-1 scrollbar-hide px-3 my-2">
               {categories &&
                 categories.map((category) => (
