@@ -1,9 +1,11 @@
 import CategoryFeed from "@/app/components/Category/CategoryFeed";
 import ExploreCategory from "@/app/components/Category/ExploreCategory";
+import AllTags from "@/app/components/Tag/AllTags";
 import {
   getAllArticlesForCategory,
   getAllCategories,
 } from "@/app/lib/category";
+import { getAllTags } from "@/app/lib/tag";
 import { Metadata } from "next";
 
 type Params = {
@@ -52,13 +54,23 @@ export async function generateMetadata({
 export default async function Category({ params: { slug } }: Params) {
   const categoriesData = getAllCategories();
 
-  const { categories: allCategories } = await categoriesData;
+  const tagsData = getAllTags();
+
+  const [{ categories: allCategories }, { tags }] = await Promise.all([
+    categoriesData,
+    tagsData,
+  ]);
 
   const newCategories = [...allCategories].filter((ele) => ele.slug !== slug);
   return (
     <>
       <CategoryFeed slug={slug} />
       <ExploreCategory categories={newCategories} />
+      {tags && (
+        <div className="mx-4 mb-5">
+          <AllTags headline="Explore Tags" tags={tags} />
+        </div>
+      )}
     </>
   );
 }

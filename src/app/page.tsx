@@ -2,6 +2,8 @@ import dynamic from "next/dynamic";
 import { getAllArticlesAsBanners } from "./lib/article";
 import Feed from "./components/main/Feed";
 import { Metadata } from "next";
+import { getAllTags } from "./lib/tag";
+import AllTags from "./components/Tag/AllTags";
 
 const BannerFeed = dynamic(() => import("./components/Banner/BannerFeed"), {
   ssr: false,
@@ -43,13 +45,22 @@ export function generateMetadata(): Metadata {
 
 export default async function Home() {
   const articleAsBannerData = getAllArticlesAsBanners();
+  const tagsData = getAllTags();
 
-  const { articles: articlesAsBanners } = await articleAsBannerData;
+  const [{ articles: articlesAsBanners }, { tags }] = await Promise.all([
+    articleAsBannerData,
+    tagsData,
+  ]);
 
   return (
     <>
       <BannerFeed articles={articlesAsBanners} />
       <Feed />
+      {tags && (
+        <div className="mx-4 mb-5">
+          <AllTags headline="Explore Tags" tags={tags} />
+        </div>
+      )}
     </>
   );
 }

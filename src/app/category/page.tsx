@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import { Category } from "../../../types";
 import CategoryDetails from "../components/shared/CategoryDetails";
 import { getAllCategoriesWithMinArticles } from "../lib/category";
+import { getAllTags } from "../lib/tag";
+import AllTags from "../components/Tag/AllTags";
 
 export function generateMetadata(): Metadata {
   return {
@@ -38,7 +40,13 @@ export function generateMetadata(): Metadata {
 }
 
 export default async function CategoryPage() {
-  const { categories } = await getAllCategoriesWithMinArticles();
+  const categoriesData = getAllCategoriesWithMinArticles();
+  const tagsData = getAllTags();
+
+  const [{ categories }, { tags }] = await Promise.all([
+    categoriesData,
+    tagsData,
+  ]);
 
   return (
     <>
@@ -50,6 +58,11 @@ export default async function CategoryPage() {
             ))}
         </div>
       </div>
+      {tags && (
+        <div className="mx-4 mb-5">
+          <AllTags headline="Explore Tags" tags={tags} />
+        </div>
+      )}
     </>
   );
 }
