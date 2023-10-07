@@ -35,7 +35,7 @@ export default function CategoryDetails({ category }: Props) {
     <>
       <div className="bg-primary-900 px-3.5 py-2.5 rounded-lg">
         <div className="flex justify-between items-center">
-          <span className="text-xl text-primary-50 uppercase">{category.name}</span>
+          <span className="text-xl text-red-500 uppercase">{category.name}</span>
           <div className="hidden md:flex text-white text-2xl">
             <button
               onClick={() =>
@@ -65,8 +65,8 @@ export default function CategoryDetails({ category }: Props) {
         </div>
         <div className="flex justify-end items-end">
           <Link href={`/category/${category.slug}`}>
-            <div className="px-3.5 align-bottom text-[12px] tracking-wide text-primary-900 flex items-center uppercase justify-center bg-primary-100 rounded-full cursor-pointer">
-              Explore More
+            <div className="px-3.5 align-bottom text-[12px] tracking-widest text-primary-900 flex items-center uppercase justify-center bg-primary-50 rounded-full cursor-pointer">
+              See More
             </div>
           </Link>
         </div>
