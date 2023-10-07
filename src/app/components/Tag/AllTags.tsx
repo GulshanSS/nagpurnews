@@ -15,7 +15,7 @@ export default function AllTags({ headline, tags }: Props) {
       <div className="flex flex-wrap gap-2">
         {tags.map((tag: Tag) => (
           <Link key={tag.id} href={`/tag/${tag.slug}`}>
-            <span className="text-sm cursor-pointer shadow-sm bg-primary-100 uppercase tracking-widest text-primary-800/80 font-bold rounded-full w-fit px-3.5 py-1">
+            <span className="text-sm cursor-pointer border border-primary-600 bg-primary-100 uppercase tracking-widest text-primary-800 font-bold rounded-full w-fit px-3.5 py-1">
               {tag.name}
             </span>
           </Link>
