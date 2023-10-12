@@ -1,7 +1,7 @@
 export default function AboutUsFeed() {
   return (
     <>
-      <div className="mx-5 flex flex-col text-primary-800 my-6 justify-center items-center">
+      <div className="flex flex-col text-primary-800 my-6 justify-center items-center">
         <h1 className="text-3xl uppercase">About Us</h1>
         <article className="mx-5 text-sm font-thin leading-7 text-justify my-5">
           <li>
