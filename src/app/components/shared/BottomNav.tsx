@@ -2,11 +2,11 @@
 import { HiHome } from "react-icons/hi";
 import { FiSearch } from "react-icons/fi";
 import { IoNewspaperOutline } from "react-icons/io5";
-import { TfiMenuAlt } from "react-icons/tfi";
 import { BsInstagram } from "react-icons/bs";
 import Link from "next/link";
 import SideNav from "../Navigation/SideNav";
 import { Category } from "../../../../types";
+import { AiOutlineMenuFold } from "react-icons/ai";
 import { useState } from "react";
 
 type Props = {
@@ -18,9 +18,9 @@ export default function BottomNav({ categories }: Props) {
   return (
     <>
       <SideNav open={open} setOpen={setOpen} categories={categories} />
-      <div className="block fixed md:hidden bottom-0 w-full bg-primary-900 px-3.5 py-2.5">
+      <div className="block fixed md:hidden bottom-0 w-full bg-primary-900 px-3.5 py-2.5 z-50">
         <div className="w-full flex justify-between items-center">
-          <Link href="/">
+          <Link href="/" onClick={() => setOpen(true)}>
             <div className="flex flex-col justify-center items-center gap-2">
               <span className="text-primary-50 text-xl">
                 <HiHome />
@@ -28,7 +28,7 @@ export default function BottomNav({ categories }: Props) {
               <span className="text-primary-50 text-[10px]">Home</span>
             </div>
           </Link>
-          <Link href="/category">
+          <Link href="/category" onClick={() => setOpen(true)}>
             <div className="flex flex-col justify-center items-center gap-2">
               <span className="text-primary-50 text-xl">
                 <IoNewspaperOutline />
@@ -36,7 +36,7 @@ export default function BottomNav({ categories }: Props) {
               <span className="text-primary-50 text-[10px]">Category</span>
             </div>
           </Link>
-          <Link href="/search">
+          <Link href="/search" onClick={() => setOpen(true)}>
             <div className="flex flex-col justify-center items-center gap-2">
               <span className="text-primary-50 text-xl">
                 <FiSearch />
@@ -47,6 +47,7 @@ export default function BottomNav({ categories }: Props) {
           <Link
             target="_blank"
             href="https://instagram.com/nagpurnews?igshid=OGQ5ZDc2ODk2ZA=="
+            onClick={() => setOpen(true)}
           >
             <div className="flex flex-col justify-center items-center gap-2">
               <span className="text-primary-50 text-xl">
@@ -56,11 +57,15 @@ export default function BottomNav({ categories }: Props) {
             </div>
           </Link>
           <div
-            onClick={() => setOpen(false)}
+            onClick={() => setOpen(!open)}
             className="flex flex-col justify-center items-center gap-2"
           >
-            <span className="text-primary-50 text-xl">
-              <TfiMenuAlt />
+            <span
+              className={`text-primary-50 text-xl ${
+                open ? "rotate-180" : "rotate-0"
+              } transition-transform ease-in-out duration-300`}
+            >
+              <AiOutlineMenuFold />
             </span>
             <span className="text-primary-50 text-[10px]">Menu</span>
           </div>
