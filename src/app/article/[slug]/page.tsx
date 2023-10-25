@@ -55,6 +55,7 @@ export async function generateMetadata({
           url: article.media.length > 0 ? article.media[0].key : "",
           alt: article.tittle,
           width: 800,
+          height: 800,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
@@ -68,6 +69,7 @@ export async function generateMetadata({
           url: article.media.length > 0 ? article.media[0].key : "",
           alt: article.tittle,
           width: 800,
+          height: 800,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
@@ -75,6 +77,7 @@ export async function generateMetadata({
         {
           url: article.media.length > 0 ? article.media[0].key : "",
           width: 800,
+          height: 800,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
