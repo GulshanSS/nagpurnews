@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (article.media.length > 0) {
     let first = article.media[0].key.split("/", 4);
     const last = article.media[0].key.split("/").pop();
-    image = `${first.join("/")}/tr:ar-4:3,w-500/${last}`;
+    image = `${first.join("/")}/tr:ar-4:3,w-800,h-600/${last}`;
   }
 
   return {
@@ -62,7 +62,8 @@ export async function generateMetadata({
         {
           url: image,
           alt: article.tittle,
-          width: 500,
+          width: 800,
+          height: 600,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
@@ -74,14 +75,16 @@ export async function generateMetadata({
         {
           url: image,
           alt: article.tittle,
-          width: 500,
+          width: 800,
+          height: 600,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
       videos: [
         {
           url: image,
-          width: 500,
+          width: 800,
+          height: 600,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
