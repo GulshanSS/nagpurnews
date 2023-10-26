@@ -15,6 +15,15 @@ export async function generateMetadata({
   params: { slug },
 }: Params): Promise<Metadata> {
   const { article } = await getArticleBySlug(slug);
+
+  let image = "";
+
+  if (article.media.length > 0) {
+    let first = article.media[0].key.split("/", 4);
+    const last = article.media[0].key.split("/").pop();
+    image = `${first.join("/")}/tr:ar-4:3,w-500/${last}`;
+  }
+
   return {
     title: article.title,
     alternates: {
@@ -46,38 +55,33 @@ export async function generateMetadata({
       },
     ],
     twitter: {
-      title: article.title,
       card: "summary_large_image",
-      site: "@nagpurnews3",
+      title: article.title,
       creator: "@nagpurnews3",
       images: [
         {
-          url: article.media.length > 0 ? article.media[0].key : "",
+          url: image,
           alt: article.tittle,
-          width: 800,
-          height: 800,
+          width: 500,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
     },
     openGraph: {
       title: article.title,
-      type: "article",
       url: `${BaseUrl}/article/${slug}`,
       images: [
         {
-          url: article.media.length > 0 ? article.media[0].key : "",
+          url: image,
           alt: article.tittle,
-          width: 800,
-          height: 800,
+          width: 500,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
       videos: [
         {
-          url: article.media.length > 0 ? article.media[0].key : "",
-          width: 800,
-          height: 800,
+          url: image,
+          width: 500,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
