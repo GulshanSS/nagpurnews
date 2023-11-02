@@ -1,5 +1,5 @@
+import AboutUsFeed from "@/app/components/AboutUs/AboutUsFeed";
 import { Metadata } from "next";
-import AboutUsFeed from "../components/AboutUs/AboutUsFeed";
 
 export function generateMetadata(): Metadata {
   return {

@@ -1,13 +1,19 @@
+import dynamic from "next/dynamic";
+import { getAllArticlesAsBanners } from "../lib/article";
+import Feed from "../components/main/Feed";
 import { Metadata } from "next";
-import SearchFeed from "../components/Search/SearchFeed";
-import AllTags from "../components/Tag/AllTags";
 import { getAllTags } from "../lib/tag";
+import AllTags from "../components/Tag/AllTags";
+
+const BannerFeed = dynamic(() => import("../components/Banner/BannerFeed"), {
+  ssr: false,
+});
 
 export function generateMetadata(): Metadata {
   return {
-    title: "Search | Nagpur News",
+    title: "Home | Nagpur News",
     alternates: {
-      canonical: `https://www.nagpurnews.live/search`,
+      canonical: `https://www.nagpurnews.live`,
     },
     manifest: "/images/site.webmanifest",
     icons: [
@@ -37,15 +43,22 @@ export function generateMetadata(): Metadata {
   };
 }
 
-export default async function Search() {
-  const { tags } = await getAllTags();
+export default async function Home() {
+  const articleAsBannerData = getAllArticlesAsBanners();
+  const tagsData = getAllTags();
+
+  const [{ articles: articlesAsBanners }, { tags }] = await Promise.all([
+    articleAsBannerData,
+    tagsData,
+  ]);
 
   return (
     <>
-      <SearchFeed />
+      <BannerFeed articles={articlesAsBanners} />
+      <Feed />
       {tags && (
         <div className="mx-4 mb-5">
-          <AllTags headline="Tags" tags={tags} />
+          <AllTags headline="Explore Tags" tags={tags} />
         </div>
       )}
     </>

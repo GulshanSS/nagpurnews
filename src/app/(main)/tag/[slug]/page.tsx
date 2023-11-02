@@ -2,7 +2,7 @@ import AllTags from "@/app/components/Tag/AllTags";
 import TagFeed from "@/app/components/Tag/TagFeed";
 import { getAllArticlesForTag, getAllTags } from "@/app/lib/tag";
 import { Metadata } from "next";
-import { Tag } from "../../../../types";
+import { Tag } from "../../../../../types";
 
 type Params = {
   params: {

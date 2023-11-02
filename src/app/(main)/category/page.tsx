@@ -1,9 +1,9 @@
+import { getAllCategoriesWithMinArticles } from "@/app/lib/category";
+import { getAllTags } from "@/app/lib/tag";
 import { Metadata } from "next";
-import { Category } from "../../../types";
-import CategoryDetails from "../components/shared/CategoryDetails";
-import { getAllCategoriesWithMinArticles } from "../lib/category";
-import { getAllTags } from "../lib/tag";
-import AllTags from "../components/Tag/AllTags";
+import { Category } from "../../../../types";
+import CategoryDetails from "@/app/components/shared/CategoryDetails";
+import AllTags from "@/app/components/Tag/AllTags";
 
 export function generateMetadata(): Metadata {
   return {
