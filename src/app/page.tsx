@@ -1,11 +1,11 @@
 import dynamic from "next/dynamic";
-import { getAllArticlesAsBanners } from "../lib/article";
-import Feed from "../components/main/Feed";
+import { getAllArticlesAsBanners } from "./lib/article";
+import Feed from "./components/main/Feed";
 import { Metadata } from "next";
-import { getAllTags } from "../lib/tag";
-import AllTags from "../components/Tag/AllTags";
+import { getAllTags } from "./lib/tag";
+import AllTags from "./components/Tag/AllTags";
 
-const BannerFeed = dynamic(() => import("../components/Banner/BannerFeed"), {
+const BannerFeed = dynamic(() => import("./components/Banner/BannerFeed"), {
   ssr: false,
 });
 
