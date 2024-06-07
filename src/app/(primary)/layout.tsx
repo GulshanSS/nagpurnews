@@ -1,4 +1,5 @@
 import React from "react";
+import Script from "next/script";
 import LatestFeed from "../components/Latest/LatestFeed";
 import PromotionaryArticleFeed from "../components/PromotionaryArticle/PromotionaryArticleFeed";
 import { getLatestArticles } from "../lib/article";
@@ -19,6 +20,12 @@ export default async function MainLayout({
 
   return (
     <>
+      <Script
+        id="adsbygoogle-init"
+        strategy="beforeInteractive"
+        crossOrigin="anonymous"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
+      />
       <div className="w-full md:w-2/3">{children}</div>
       <div className="w-full md:w-1/3">
         {latestArticles && <LatestFeed articles={latestArticles} />}
