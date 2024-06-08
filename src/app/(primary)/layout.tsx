@@ -20,19 +20,29 @@ export default async function MainLayout({
 
   return (
     <>
+      <div className="w-full md:w-2/3">{children}</div>
+      <div className="w-full md:w-1/3">
+        {latestArticles && <LatestFeed articles={latestArticles} />}
+        {promotionaryArticlesAsBanner && (
+          <PromotionaryArticleFeed
+            promotionaryArticles={promotionaryArticlesAsBanner}
+          />
+        )}
+      </div>
+      <Script
+        id="adsbygoogle-fc"
+        strategy="afterInteractive"
+        crossOrigin="anonymous"
+        nonce="1kz3Q8jUHcauoeSgBYdGAQ"
+        src="https://fundingchoicesmessages.google.com/i/pub-5092077595720219?ers=1"
+      />
       <Script
         id="adsbygoogle-init"
         strategy="afterInteractive"
         crossOrigin="anonymous"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
       />
-      <Script
-        id="adsbygoogle-fc"
-        strategy="afterInteractive"
-        nonce="1kz3Q8jUHcauoeSgBYdGAQ"
-        src="https://fundingchoicesmessages.google.com/i/pub-5092077595720219?ers=1"
-      />
-      <Script id="adsbygoogle-fc-code" strategy="afterInteractive" nonce="1kz3Q8jUHcauoeSgBYdGAQ">
+      <Script id="adsbygoogle-fc-code" strategy="afterInteractive" crossOrigin="anonymous" nonce="1kz3Q8jUHcauoeSgBYdGAQ">
         {`(function() {
             function signalGooglefcPresent() {
               if (!window.frames['googlefcPresent']) {
@@ -50,15 +60,6 @@ export default async function MainLayout({
             signalGooglefcPresent();
           })();`}
       </Script>
-      <div className="w-full md:w-2/3">{children}</div>
-      <div className="w-full md:w-1/3">
-        {latestArticles && <LatestFeed articles={latestArticles} />}
-        {promotionaryArticlesAsBanner && (
-          <PromotionaryArticleFeed
-            promotionaryArticles={promotionaryArticlesAsBanner}
-          />
-        )}
-      </div>
     </>
   );
 }
