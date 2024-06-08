@@ -27,11 +27,12 @@ export default async function MainLayout({
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
       />
       <Script
+        id="adsbygoogle-fc"
         strategy="afterInteractive"
         nonce="1kz3Q8jUHcauoeSgBYdGAQ"
         src="https://fundingchoicesmessages.google.com/i/pub-5092077595720219?ers=1"
       />
-      <Script strategy="afterInteractive" nonce="1kz3Q8jUHcauoeSgBYdGAQ">
+      <Script id="adsbygoogle-fc-code" strategy="afterInteractive" nonce="1kz3Q8jUHcauoeSgBYdGAQ">
         {`(function() {
             function signalGooglefcPresent() {
               if (!window.frames['googlefcPresent']) {
