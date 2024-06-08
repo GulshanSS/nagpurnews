@@ -23,7 +23,7 @@ export default async function MainLayout({
       <Script
         id="adsbygoogle-init"
         async
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         crossOrigin="anonymous"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
       />
