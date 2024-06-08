@@ -4,6 +4,7 @@ import LatestFeed from "../components/Latest/LatestFeed";
 import PromotionaryArticleFeed from "../components/PromotionaryArticle/PromotionaryArticleFeed";
 import { getLatestArticles } from "../lib/article";
 import { getAllPromotionaryArticlesAsBanners } from "../lib/promotionaryArticles";
+import Head from "next/head";
 
 export default async function MainLayout({
   children,
@@ -20,6 +21,15 @@ export default async function MainLayout({
 
   return (
     <>
+      <Head>
+        <link rel="preload" href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219" as="script"/>
+      </Head>
+      <Script
+        id="adsbygoogle-init"
+        strategy="afterInteractive"
+        crossOrigin="anonymous"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
+      />
       <div className="w-full md:w-2/3">{children}</div>
       <div className="w-full md:w-1/3">
         {latestArticles && <LatestFeed articles={latestArticles} />}
@@ -32,17 +42,14 @@ export default async function MainLayout({
       <Script
         id="adsbygoogle-fc"
         strategy="afterInteractive"
-        crossOrigin="anonymous"
         nonce="1kz3Q8jUHcauoeSgBYdGAQ"
         src="https://fundingchoicesmessages.google.com/i/pub-5092077595720219?ers=1"
       />
       <Script
-        id="adsbygoogle-init"
+        id="adsbygoogle-fc-code"
         strategy="afterInteractive"
-        crossOrigin="anonymous"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
-      />
-      <Script id="adsbygoogle-fc-code" strategy="afterInteractive" crossOrigin="anonymous" nonce="1kz3Q8jUHcauoeSgBYdGAQ">
+        nonce="1kz3Q8jUHcauoeSgBYdGAQ"
+      >
         {`(function() {
             function signalGooglefcPresent() {
               if (!window.frames['googlefcPresent']) {
