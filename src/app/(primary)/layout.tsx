@@ -4,6 +4,13 @@ import LatestFeed from "../components/Latest/LatestFeed";
 import PromotionaryArticleFeed from "../components/PromotionaryArticle/PromotionaryArticleFeed";
 import { getLatestArticles } from "../lib/article";
 import { getAllPromotionaryArticlesAsBanners } from "../lib/promotionaryArticles";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  other: {
+    "google-adsense-account": "ca-pub-5092077595720219",
+  },
+};
 
 export default async function MainLayout({
   children,
