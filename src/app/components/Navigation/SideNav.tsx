@@ -1,5 +1,5 @@
 import { BiSolidCategory } from "react-icons/bi";
-import { BsPeopleFill } from "react-icons/bs";
+import { BsPeopleFill, BsTwitterX } from "react-icons/bs";
 import { Category } from "../../../../types";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,7 +8,6 @@ import SocialLinkForPromotionaryArticle from "../shared/SocialLinkForPromotionar
 import {
   BsFacebook,
   BsInstagram,
-  BsTwitter,
   BsWhatsapp,
   BsYoutube,
 } from "react-icons/bs";
@@ -103,7 +102,7 @@ export default function SideNav({ open, setOpen, categories }: Props) {
                   socialMediaName="instagram"
                 />
                 <SocialLinkForPromotionaryArticle
-                  icon={<BsTwitter />}
+                  icon={<BsTwitterX />}
                   link="https://twitter.com/nagpurnews3?s=11&t=8HMRzhBp7cDyqAwaBU2sRA"
                   socialMediaName="twitter"
                 />

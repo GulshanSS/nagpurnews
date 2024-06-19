@@ -39,3 +39,24 @@
   font-weight: bold;
   text-decoration: underline;
 }
+
+.sticky-nav {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+}
+
+.sticky-nav.sticky {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow when sticky */
+}
+
+/* Hide scrollbars for overflow-x-auto */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}

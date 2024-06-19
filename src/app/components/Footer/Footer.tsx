@@ -3,7 +3,7 @@ import SocialLinkForPromotionaryArticle from "../shared/SocialLinkForPromotionar
 import {
   BsFacebook,
   BsInstagram,
-  BsTwitter,
+  BsTwitterX,
   BsWhatsapp,
   BsYoutube,
 } from "react-icons/bs";
@@ -35,7 +35,7 @@ export default function Footer() {
             socialMediaName="instagram"
           />
           <SocialLinkForPromotionaryArticle
-            icon={<BsTwitter />}
+            icon={<BsTwitterX />}
             link="https://twitter.com/nagpurnews3?s=11&t=8HMRzhBp7cDyqAwaBU2sRA"
             socialMediaName="twitter"
           />

@@ -4,8 +4,8 @@ import {
   BsWhatsapp,
   BsFacebook,
   BsTelegram,
-  BsTwitter,
   BsShareFill,
+  BsTwitterX,
 } from "react-icons/bs";
 
 type Props = {
@@ -75,7 +75,7 @@ export default function Share({ url, title }: Props) {
             href={`http://twitter.com/intent/tweet?text=${title}&url=${BaseUrl}/${url}`}
           >
             <span className="text-xl rounded-full">
-              <BsTwitter />
+              <BsTwitterX />
             </span>
           </a>
         </li>

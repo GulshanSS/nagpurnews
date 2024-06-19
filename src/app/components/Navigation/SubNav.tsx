@@ -10,7 +10,7 @@ export default async function SubNav() {
   const { categories } = await categoriesData;
 
   return (
-    <nav className="w-full bg-primary-900 border-b border-primary-600 z-30">
+    <nav className="sticky-nav w-full bg-primary-900 border-b border-primary-600 z-30">
       <div className="max-w-screen-xl px-3 py-2 mx-auto">
         <div className="flex items-center">
           <ul className="font-medium mt-0 mr-2 space-x-8 text-sm border-r border-primary-600">

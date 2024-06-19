@@ -4,7 +4,7 @@ import SocialLinkForPromotionaryArticle from "../shared/SocialLinkForPromotionar
 import {
   BsFacebook,
   BsInstagram,
-  BsTwitter,
+  BsTwitterX,
   BsWhatsapp,
   BsYoutube,
 } from "react-icons/bs";
@@ -23,7 +23,7 @@ export default function Navbar() {
                 className="w-6 md:w-8 mr-3 rounded-full ring-2 ring-primary-600"
                 alt="Nagpur News Logo"
               />
-              <span className="self-center text-xl md:text-2xl text-primary-800 font-bold whitespace-nowrap uppercase">
+              <span className="self-center text-xl md:text-2xl text-primary-800 font-semibold whitespace-nowrap">
                 Nagpur News
               </span>
             </div>
@@ -56,7 +56,7 @@ export default function Navbar() {
               socialMediaName="instagram"
             />
             <SocialLinkForPromotionaryArticle
-              icon={<BsTwitter />}
+              icon={<BsTwitterX />}
               link="https://twitter.com/nagpurnews3?s=11&t=8HMRzhBp7cDyqAwaBU2sRA"
               socialMediaName="twitter"
             />

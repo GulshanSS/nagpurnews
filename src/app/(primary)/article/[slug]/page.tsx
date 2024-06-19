@@ -19,9 +19,7 @@ export async function generateMetadata({
   let image = "";
 
   if (article.media.length > 0) {
-    let first = article.media[0].key.split("/", 4);
-    const last = article.media[0].key.split("/").pop();
-    image = `${first.join("/")}/tr:ar-4:3,w-800,h-600/${last}`;
+    image = `${article.media[0].key}`;
   }
 
   return {
