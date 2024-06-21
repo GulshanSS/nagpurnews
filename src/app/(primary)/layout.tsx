@@ -5,6 +5,7 @@ import PromotionaryArticleFeed from "../components/PromotionaryArticle/Promotion
 import { getLatestArticles } from "../lib/article";
 import { getAllPromotionaryArticlesAsBanners } from "../lib/promotionaryArticles";
 import { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   other: {
@@ -62,6 +63,7 @@ export default async function MainLayout({
             signalGooglefcPresent();
           })();`}
       </Script>
+      <GoogleAnalytics gaId="G-XTPSY71VLK"/>
       <div className="w-full md:w-2/3">{children}</div>
       <div className="w-full md:w-1/3">
         {latestArticles && <LatestFeed articles={latestArticles} />}
