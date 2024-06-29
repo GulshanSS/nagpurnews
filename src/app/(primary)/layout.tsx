@@ -63,7 +63,6 @@ export default async function MainLayout({
             signalGooglefcPresent();
           })();`}
       </Script>
-      <GoogleAnalytics gaId="G-XTPSY71VLK"/>
       <div className="w-full md:w-2/3">{children}</div>
       <div className="w-full md:w-1/3">
         {latestArticles && <LatestFeed articles={latestArticles} />}
