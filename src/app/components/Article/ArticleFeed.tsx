@@ -17,10 +17,10 @@ type Props = {
 export default function ArticleFeed({ article }: Props) {
   return (
     <div className="mx-2 p-2 rounded-md mb-6">
-      {article.media.length > 0 && <Carousel slides={article.media} />}
-      <div className="font-semibold text-xl md:text-2xl text-primary-800">
+      <div className="font-semibold p-2 mb-2 rounded-md bg-black text-white text-xl md:text-2xl">
         {article.title}
       </div>
+      {article.media.length > 0 && <Carousel slides={article.media} />}
       <div className="text-gray-500 font-semibold uppercase">
         <div className="text-[12px]">
           {article.location},{" "}
