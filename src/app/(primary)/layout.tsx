@@ -5,7 +5,6 @@ import PromotionaryArticleFeed from "../components/PromotionaryArticle/Promotion
 import { getLatestArticles } from "../lib/article";
 import { getAllPromotionaryArticlesAsBanners } from "../lib/promotionaryArticles";
 import { Metadata } from "next";
-import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   other: {
