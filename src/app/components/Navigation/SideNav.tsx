@@ -3,7 +3,7 @@ import { BsPeopleFill, BsTwitterX } from "react-icons/bs";
 import { Category } from "../../../../types";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/app/assets/logo.jpg";
+import logo from "@/app/assets/logo.png";
 import SocialLinkForPromotionaryArticle from "../shared/SocialLinkForPromotionaryArticle";
 import {
   BsFacebook,
@@ -35,7 +35,7 @@ export default function SideNav({ open, setOpen, categories }: Props) {
               >
                 <Image
                   src={logo}
-                  className="w-6 md:w-8 mr-3 rounded-full ring-2 ring-primary-600"
+                  className="w-6 md:w-8 mr-3 rounded-full"
                   alt="Nagpur News Logo"
                 />
                 <span className="self-center text-xl md:text-2xl text-primary-100 font-bold whitespace-nowrap uppercase">

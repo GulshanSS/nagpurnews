@@ -53,9 +53,12 @@ export default async function CategoryPage() {
       <div className="mx-4 py-2">
         <div className="flex flex-col gap-4">
           {categories &&
-            categories.map((category: Category) => (
-              <CategoryDetails key={category.id} category={category} />
-            ))}
+            categories.map(
+              (category: Category) =>
+                category.article.length > 0 && (
+                  <CategoryDetails key={category.id} category={category} />
+                )
+            )}
         </div>
       </div>
       {tags && (

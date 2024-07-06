@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/app/assets/logo.jpg";
+import logo from "@/app/assets/logo.png";
 import SocialLinkForPromotionaryArticle from "../shared/SocialLinkForPromotionaryArticle";
 import {
   BsFacebook,
@@ -20,7 +20,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <Image
                 src={logo}
-                className="w-6 md:w-8 mr-3 rounded-full ring-2 ring-primary-600"
+                className="w-6 md:w-8 mr-3 rounded-full"
                 alt="Nagpur News Logo"
               />
               <span className="self-center text-xl md:text-2xl text-primary-800 font-semibold whitespace-nowrap">
