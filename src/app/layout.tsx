@@ -57,6 +57,7 @@ export default async function RootLayout({
         ></script>
         <script
           id="adsbygoogle-fc"
+          async
           nonce="1kz3Q8jUHcauoeSgBYdGAQ"
           src="https://fundingchoicesmessages.google.com/i/pub-5092077595720219?ers=1"
         ></script>
