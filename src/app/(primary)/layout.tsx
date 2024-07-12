@@ -27,6 +27,28 @@ export default async function MainLayout({
 
   return (
     <>
+      <Script
+        id="adsbygoogle-fc-code"
+        strategy="afterInteractive"
+        nonce="1kz3Q8jUHcauoeSgBYdGAQ"
+      >
+        {`(function() {
+            function signalGooglefcPresent() {
+              if (!window.frames['googlefcPresent']) {
+                if (document.body) {
+                  const iframe = document.createElement('iframe'); 
+                  iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; 
+                  iframe.style.display = 'none'; 
+                  iframe.name = 'googlefcPresent'; 
+                  document.body.appendChild(iframe);
+                } else {
+                  setTimeout(signalGooglefcPresent, 0);
+                }
+              }
+            }
+            signalGooglefcPresent();
+          })();`}
+      </Script>
       <div className="w-full md:w-2/3">{children}</div>
       <div className="w-full md:w-1/3">
         {latestArticles && <LatestFeed articles={latestArticles} />}
