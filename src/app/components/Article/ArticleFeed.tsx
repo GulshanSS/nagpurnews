@@ -5,6 +5,7 @@ import { BsShare } from "react-icons/bs";
 
 import dynamic from "next/dynamic";
 import AllTags from "../Tag/AllTags";
+import Ads from "../Adsense/Ads";
 
 const Carousel = dynamic(() => import("../shared/Carousel"), {
   ssr: false,
@@ -76,6 +77,7 @@ export default function ArticleFeed({ article }: Props) {
         <span className="tracking-wide">Share</span>
       </div>
       <Share url={`article/${article.slug}`} title={article.title} />
+      <Ads clientId="5092077595720219" slot="2383219516" />
     </div>
   );
 }

@@ -8,6 +8,7 @@ import ScrollButton from "../shared/ScrollButton";
 import { getAllArticlesForCategory } from "@/app/lib/category";
 import SkeletonCard from "../shared/SkeletonCard";
 import Pagination from "../shared/Pagination";
+import Ads from "../Adsense/Ads";
 
 type Props = {
   slug: string;
@@ -35,6 +36,7 @@ export default function CategoryFeed({ slug }: Props) {
 
   const content = (
     <div className="mx-2 p-2 rounded-md mb-6">
+      <Ads clientId="5092077595720219" slot="9260469114" />
       <div className="mb-6 font-semibold text-2xl text-primary-800 uppercase">
         {category && category.name}
       </div>

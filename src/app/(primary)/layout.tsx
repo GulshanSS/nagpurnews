@@ -49,6 +49,12 @@ export default async function MainLayout({
             signalGooglefcPresent();
           })();`}
       </Script>
+      <Script
+        id="ads-b"
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
+        crossOrigin="anonymous"
+      />
       <div className="w-full md:w-2/3">{children}</div>
       <div className="w-full md:w-1/3">
         {latestArticles && <LatestFeed articles={latestArticles} />}
