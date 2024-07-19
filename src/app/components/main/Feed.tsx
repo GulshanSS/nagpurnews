@@ -37,6 +37,7 @@ export default function Feed() {
             <ArticleCard key={article.id} article={article} />
           ))}
       </div>
+      <Ads clientId="5092077595720219" slot="1956694160" />
       <div className="mx-auto py-4">
         <Pagination top={500} page={page} pages={pages} changePage={setPage} />
       </div>

@@ -14,7 +14,6 @@ function LatestFeed({ articles }: Props) {
         <span className="font-semibold text-2xl text-primary-800 uppercase">
           Latest News
         </span>
-        <Ads clientId="5092077595720219" slot="1956694160" />
         <div className="my-4 flex flex-col gap-2">
           {articles &&
             articles.map((article) => (

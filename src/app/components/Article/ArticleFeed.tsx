@@ -5,7 +5,6 @@ import { BsShare } from "react-icons/bs";
 
 import dynamic from "next/dynamic";
 import AllTags from "../Tag/AllTags";
-import Ads from "../Adsense/Ads";
 
 const Carousel = dynamic(() => import("../shared/Carousel"), {
   ssr: false,
