@@ -1,4 +1,3 @@
-import Ads from "@/app/components/Adsense/Ads";
 import CategoryFeed from "@/app/components/Category/CategoryFeed";
 import ExploreCategory from "@/app/components/Category/ExploreCategory";
 import AllTags from "@/app/components/Tag/AllTags";
@@ -66,14 +65,12 @@ export default async function Category({ params: { slug } }: Params) {
   return (
     <>
       <CategoryFeed slug={slug} />
-      <Ads clientId="5092077595720219" slot="7843445660" />
       <ExploreCategory categories={newCategories} />
       {tags && (
         <div className="mx-4 mb-5">
           <AllTags headline="Explore Tags" tags={tags} />
         </div>
       )}
-      <Ads clientId="5092077595720219" slot="2191647820" />
     </>
   );
 }

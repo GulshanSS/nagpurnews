@@ -77,7 +77,6 @@ export default function ArticleFeed({ article }: Props) {
         <span className="tracking-wide">Share</span>
       </div>
       <Share url={`article/${article.slug}`} title={article.title} />
-      <Ads clientId="5092077595720219" slot="2383219516" />
     </div>
   );
 }

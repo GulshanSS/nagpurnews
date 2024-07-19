@@ -35,28 +35,31 @@ export default function CategoryFeed({ slug }: Props) {
   }
 
   const content = (
-    <div className="mx-2 p-2 rounded-md mb-6">
-      <Ads clientId="5092077595720219" slot="9260469114" />
-      <div className="mb-6 font-semibold text-2xl text-primary-800 uppercase">
-        {category && category.name}
+    <>
+      <Ads clientId="5092077595720219" slot="7843445660" />
+      <div className="mx-2 p-2 rounded-md mb-6">
+        <Ads clientId="5092077595720219" slot="9260469114" />
+        <div className="mb-6 font-semibold text-2xl text-primary-800 uppercase">
+          {category && category.name}
+        </div>
+        <div className="w-full flex flex-wrap justify-center lg:justify-start gap-4">
+          {category &&
+            category.article.map((article) => (
+              <Link
+                className="w-full md:w-96"
+                key={article.id}
+                href={`/article/${article.slug}`}
+              >
+                <ArticleCardForCategory article={article} />
+              </Link>
+            ))}
+        </div>
+        <div className="mx-auto py-4">
+          <Pagination top={0} page={page} pages={pages} changePage={setPage} />
+        </div>
+        <ScrollButton />
       </div>
-      <div className="w-full flex flex-wrap justify-center lg:justify-start gap-4">
-        {category &&
-          category.article.map((article) => (
-            <Link
-              className="w-full md:w-96"
-              key={article.id}
-              href={`/article/${article.slug}`}
-            >
-              <ArticleCardForCategory article={article} />
-            </Link>
-          ))}
-      </div>
-      <div className="mx-auto py-4">
-        <Pagination top={0} page={page} pages={pages} changePage={setPage} />
-      </div>
-      <ScrollButton />
-    </div>
+    </>
   );
 
   return content;
