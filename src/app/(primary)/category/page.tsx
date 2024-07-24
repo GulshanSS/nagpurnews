@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import { Category } from "../../../../types";
 import CategoryDetails from "@/app/components/shared/CategoryDetails";
 import AllTags from "@/app/components/Tag/AllTags";
-import Ads from "@/app/components/Adsense/Ads";
 
 export function generateMetadata(): Metadata {
   return {
@@ -62,7 +61,6 @@ export default async function CategoryPage() {
             )}
         </div>
       </div>
-      <Ads clientId="5092077595720219" slot="2191647820" />
       {tags && (
         <div className="mx-4 mb-5">
           <AllTags headline="Explore Tags" tags={tags} />

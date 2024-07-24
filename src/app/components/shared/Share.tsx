@@ -7,6 +7,7 @@ import {
   BsShareFill,
   BsTwitterX,
 } from "react-icons/bs";
+import Ads from "../Adsense/Ads";
 
 type Props = {
   url: string;
@@ -89,6 +90,7 @@ export default function Share({ url, title }: Props) {
           </li>
         )}
       </ul>
+      <Ads clientId="5092077595720219" slot="2191647820" />
     </>
   );
 }
