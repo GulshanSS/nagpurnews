@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Category } from "../../../../types";
 import Link from "next/link";
