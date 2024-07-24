@@ -12,7 +12,6 @@ type Props = {
 export default function ExploreCategory({ categories }: Props) {
   return (
     <>
-      <Ads clientId="5092077595720219" slot="7843445660" />
       <div className="m-4 p-4 flex flex-col rounded-md bg-primary-900">
         <span className="mb-6 font-semibold text-2xl text-primary-50 uppercase">
           Explore Other Categories
@@ -27,6 +26,7 @@ export default function ExploreCategory({ categories }: Props) {
           ))}
         </div>
       </div>
+      <Ads clientId="5092077595720219" slot="7843445660" />
     </>
   );
 }

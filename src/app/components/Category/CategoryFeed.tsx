@@ -37,7 +37,6 @@ export default function CategoryFeed({ slug }: Props) {
   const content = (
     <>
       <div className="mx-2 p-2 rounded-md mb-6">
-        <Ads clientId="5092077595720219" slot="9260469114" />
         <div className="mb-6 font-semibold text-2xl text-primary-800 uppercase">
           {category && category.name}
         </div>
@@ -53,6 +52,7 @@ export default function CategoryFeed({ slug }: Props) {
               </Link>
             ))}
         </div>
+        <Ads clientId="5092077595720219" slot="9260469114" />
         <div className="mx-auto py-4">
           <Pagination top={0} page={page} pages={pages} changePage={setPage} />
         </div>
