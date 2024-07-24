@@ -27,19 +27,18 @@ export default function Carousel({ slides }: Props) {
   return (
     <>
       <div className="w-full relative group">
-        <div className="h-60 md:h-[500px] flex justify-center bg-black rounded-md">
+        <div className="h-60 md:h-[500px] flex justify-center bg-black">
           {slides[currentIndex].type.startsWith("image/") && (
             <img
               loading="lazy"
               alt={slides[currentIndex].articleId}
-              className="object-cover w-full h-full overflow-hidden rounded-md duration-500"
+              className="object-cover w-full h-full overflow-hidden duration-500"
               src={slides[currentIndex].key}
             />
           )}
           {slides[currentIndex].type.startsWith("video/") && (
             <video
               playsInline
-              className="rounded-md"
               src={slides[currentIndex].key}
               loop
               controls
@@ -63,17 +62,6 @@ export default function Carousel({ slides }: Props) {
               </div>
             </>
           )}
-        </div>
-        <div className="flex w-full justify-center py-2">
-          {slides.map((slide, slideIndex) => (
-            <div
-              className="text-xl cursor-pointer"
-              key={slide.id}
-              onClick={() => setCurrentIndex(slideIndex)}
-            >
-              <RxDotFilled />
-            </div>
-          ))}
         </div>
       </div>
     </>

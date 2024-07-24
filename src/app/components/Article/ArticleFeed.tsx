@@ -17,10 +17,10 @@ type Props = {
 export default function ArticleFeed({ article }: Props) {
   return (
     <div className="mx-2 p-2 rounded-md mb-6">
-      <div className="font-semibold p-2 mb-2 rounded-md bg-black text-white text-xl md:text-2xl">
-        {article.title}
+      <div className="font-semibold mb-2 bg-black text-white text-xl md:text-2xl">
+        <div className="p-2">{article.title}</div>
+        {article.media.length > 0 && <Carousel slides={article.media} />}
       </div>
-      {article.media.length > 0 && <Carousel slides={article.media} />}
       <div className="text-gray-500 font-semibold uppercase">
         <div className="text-[12px]">
           {article.location},{" "}
@@ -32,6 +32,10 @@ export default function ArticleFeed({ article }: Props) {
           - {article.author}
         </div>
       </div>
+      <div
+        className="text-[16px] font-light text-primary-800 leading-6 text-justify mb-6 article_feed"
+        dangerouslySetInnerHTML={{ __html: article.content }}
+      ></div>
       {article.youtubeVideoUrl !== "" && (
         <iframe
           src={article.youtubeVideoUrl}
@@ -45,10 +49,6 @@ export default function ArticleFeed({ article }: Props) {
           }}
         />
       )}
-      <div
-        className="text-[16px] font-light text-primary-800 leading-6 text-justify mb-6 article_feed"
-        dangerouslySetInnerHTML={{ __html: article.content }}
-      ></div>
       {article.articleSection.length > 0 &&
         article.articleSection.map((articleSection) => (
           <div key={articleSection.id}>

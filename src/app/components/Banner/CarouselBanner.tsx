@@ -45,9 +45,13 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
 
   return (
     <>
-      <Ads clientId="5092077595720219" slot="2191647820" />
-      <div className="w-full group">
-        <div className="w-full relative bg-black rounded-md">
+      <div className="w-full group bg-black text-white shadow-lg rounded-md">
+        <Link href={`/article/${slides[currentIndex].slug}`}>
+          <div className="text-lg md:text-xl p-2 w-full text-justify font-bold text-white capitalize">
+            <span>{slides.length > 0 && slides[currentIndex].title}</span>
+          </div>
+        </Link>
+        <div className="w-full relative bg-black">
           {slides.length > 0 &&
             slides[currentIndex].media[0].type.startsWith("image/") && (
               <Link href={`/article/${slides[currentIndex].slug}`}>
@@ -105,19 +109,16 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
             {slides.length > 0 &&
               slides[currentIndex].category.map((category) => (
                 <Link key={category.id} href={`/category/${category.slug}`}>
-                  <span className="text-sm px-2 py-1 bg-red-600 text-primary-50 font-medium uppercase rounded-full shadow-md">
+                  <span className="text-sm px-2 py-1 bg-red-600 text-primary-50 font-medium uppercase shadow-md">
                     {category.name}
                   </span>
                 </Link>
               ))}
           </div>
           <Link href={`/article/${slides[currentIndex].slug}`}>
-            <div className="text-sm md:text-xl w-full text-justify leading-tight font-bold text-primary-900 capitalize">
-              <span>{slides.length > 0 && slides[currentIndex].title}</span>
-            </div>
             {slides.length > 0 && (
               <div
-                className="text-[14px] text-slate-600 leading-6 font-medium pt-2 line-clamp-div carousel-banner-card"
+                className="text-[14px] text-white leading-6 font-medium pt-2 line-clamp-div carousel-banner-card"
                 dangerouslySetInnerHTML={{
                   __html: slides[currentIndex].content,
                 }}
@@ -133,6 +134,7 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
         </div>
       </div>
       <Ads clientId="5092077595720219" slot="2383219516" />
+      <Ads clientId="5092077595720219" slot="2191647820" />
     </>
   );
 }
