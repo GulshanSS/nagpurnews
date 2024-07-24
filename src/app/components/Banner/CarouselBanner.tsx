@@ -55,11 +55,11 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
           {slides.length > 0 &&
             slides[currentIndex].media[0].type.startsWith("image/") && (
               <Link href={`/article/${slides[currentIndex].slug}`}>
-                <div className="h-60 md:h-[500px] flex justify-center bg-black rounded-md">
+                <div className="h-60 md:h-[500px] flex justify-center bg-black">
                   <img
                     loading="lazy"
                     alt={slides[currentIndex].title}
-                    className="object-cover w-full h-full overflow-hidden duration-500 rounded-md"
+                    className="object-cover w-full h-full overflow-hidden duration-500"
                     src={slides[currentIndex].media[0].key}
                   />
                 </div>
@@ -68,10 +68,9 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
           {slides.length > 0 &&
             slides[currentIndex].media[0].type.startsWith("video/") && (
               <Link href={`/article/${slides[currentIndex].slug}`}>
-                <div className="h-60 md:h-[500px] flex justify-center bg-black rounded-md">
+                <div className="h-60 md:h-[500px] flex justify-center bg-black">
                   <video
                     playsInline
-                    className="rounded-md"
                     src={slides[currentIndex].media[0].key}
                     loop
                     controls
@@ -134,7 +133,6 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
         </div>
       </div>
       <Ads clientId="5092077595720219" slot="2383219516" />
-      <Ads clientId="5092077595720219" slot="2191647820" />
     </>
   );
 }
