@@ -10,6 +10,13 @@ const Carousel = dynamic(() => import("../shared/Carousel"), {
   ssr: false,
 });
 
+const TwitterVideoEmbeded = dynamic(
+  () => import("../shared/TwitterVideoEmbeded"),
+  {
+    ssr: false,
+  }
+);
+
 type Props = {
   article: Article;
 };
@@ -48,6 +55,9 @@ export default function ArticleFeed({ article }: Props) {
             margin: "10px 0",
           }}
         />
+      )}
+      {article.twitterId !== "" && (
+        <TwitterVideoEmbeded content={article.twitterId} />
       )}
       {article.articleSection.length > 0 &&
         article.articleSection.map((articleSection) => (

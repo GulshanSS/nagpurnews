@@ -80,6 +80,7 @@ export type Article = {
   content: string;
   location: string;
   youtubeVideoUrl: string;
+  twitterId: string;
   author: string;
   publishedOn: Date;
   state: string;

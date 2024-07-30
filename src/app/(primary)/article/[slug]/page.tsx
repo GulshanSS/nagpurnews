@@ -3,6 +3,8 @@ import { getArticleBySlug } from "@/app/lib/article";
 import { Metadata } from "next";
 import React from "react";
 
+export const dynamic = "force-dynamic";
+
 const BaseUrl = process.env.NEXT_PUBLIC_CLIENT_URI as string;
 
 type Params = {

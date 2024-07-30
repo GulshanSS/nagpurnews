@@ -7,7 +7,6 @@ import { Category } from "../../../../types";
 import ArticleCardMin from "./ArticleCardMin";
 import { useRef } from "react";
 import Link from "next/link";
-import Ads from "../Adsense/Ads";
 
 type Props = {
   category: Category;
@@ -72,7 +71,6 @@ export default function CategoryDetails({ category }: Props) {
           </Link>
         </div>
       </div>
-      <Ads clientId="5092077595720219" slot="2191647820" />
     </>
   );
 }

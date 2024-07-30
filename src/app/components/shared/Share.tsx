@@ -7,7 +7,6 @@ import {
   BsShareFill,
   BsTwitterX,
 } from "react-icons/bs";
-import Ads from "../Adsense/Ads";
 
 type Props = {
   url: string;

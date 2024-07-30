@@ -8,7 +8,6 @@ import ScrollButton from "../shared/ScrollButton";
 import { getAllArticlesForCategory } from "@/app/lib/category";
 import SkeletonCard from "../shared/SkeletonCard";
 import Pagination from "../shared/Pagination";
-import Ads from "../Adsense/Ads";
 
 type Props = {
   slug: string;
@@ -52,7 +51,6 @@ export default function CategoryFeed({ slug }: Props) {
               </Link>
             ))}
         </div>
-        <Ads clientId="5092077595720219" slot="9260469114" />
         <div className="mx-auto py-4">
           <Pagination top={0} page={page} pages={pages} changePage={setPage} />
         </div>

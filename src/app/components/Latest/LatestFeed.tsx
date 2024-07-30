@@ -1,7 +1,6 @@
 import React from "react";
 import { Article } from "../../../../types";
 import LatestNewsCard from "./LatestNewsCard";
-import Ads from "../Adsense/Ads";
 
 type Props = {
   articles: Article[];

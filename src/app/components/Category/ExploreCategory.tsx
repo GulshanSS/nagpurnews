@@ -3,7 +3,6 @@
 import React from "react";
 import { Category } from "../../../../types";
 import Link from "next/link";
-import Ads from "../Adsense/Ads";
 
 type Props = {
   categories: Category[];
@@ -26,7 +25,6 @@ export default function ExploreCategory({ categories }: Props) {
           ))}
         </div>
       </div>
-      <Ads clientId="5092077595720219" slot="7843445660" />
     </>
   );
 }

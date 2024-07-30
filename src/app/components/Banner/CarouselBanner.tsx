@@ -5,7 +5,6 @@ import Link from "next/link";
 import { CgTimelapse } from "react-icons/cg";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import Ads from "../Adsense/Ads";
 
 type Props = {
   slides: Article[];
@@ -47,7 +46,7 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
     <>
       <div className="w-full group bg-black text-white shadow-lg rounded-md">
         <Link href={`/article/${slides[currentIndex].slug}`}>
-          <div className="text-lg md:text-xl p-2 w-full text-justify font-bold text-white capitalize">
+          <div className="text-lg md:text-xl py-2 px-5 w-full font-bold text-white capitalize">
             <span>{slides.length > 0 && slides[currentIndex].title}</span>
           </div>
         </Link>
@@ -103,7 +102,7 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
           )}
         </div>
 
-        <div className="py-2.5 px-2">
+        <div className="py-2.5 px-5">
           <div className="mb-2 flex gap-2">
             {slides.length > 0 &&
               slides[currentIndex].category.map((category) => (
@@ -132,7 +131,6 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
           </Link>
         </div>
       </div>
-      <Ads clientId="5092077595720219" slot="2383219516" />
     </>
   );
 }

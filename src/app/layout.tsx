@@ -49,18 +49,6 @@ export default async function RootLayout({
         />
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="theme-color" content="#ffffff" />
-        <script
-          id="adsbygoogle-init"
-          async
-          crossOrigin="anonymous"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
-        ></script>
-        <script
-          id="adsbygoogle-fc"
-          async
-          nonce="1kz3Q8jUHcauoeSgBYdGAQ"
-          src="https://fundingchoicesmessages.google.com/i/pub-5092077595720219?ers=1"
-        ></script>
       </head>
       <body className={poppins.className}>
         <Navbar />

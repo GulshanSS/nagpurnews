@@ -6,7 +6,6 @@ import ScrollButton from "../shared/ScrollButton";
 import { getMainFeedArticles } from "@/app/lib/article";
 import Pagination from "../shared/Pagination";
 import SkeletonCard from "../shared/SkeletonCard";
-import Ads from "../Adsense/Ads";
 
 export default function Feed() {
   const [page, setPage] = useState<number>(1);
@@ -30,14 +29,12 @@ export default function Feed() {
 
   return (
     <div className="mx-2 p-2">
-      <Ads clientId="5092077595720219" slot="5816048125" />
       <div className="my-4 flex flex-col gap-2">
         {articles &&
           articles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}
       </div>
-      <Ads clientId="5092077595720219" slot="1956694160" />
       <div className="mx-auto py-4">
         <Pagination top={500} page={page} pages={pages} changePage={setPage} />
       </div>
