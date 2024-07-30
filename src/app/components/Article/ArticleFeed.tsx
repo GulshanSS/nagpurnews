@@ -25,7 +25,7 @@ export default function ArticleFeed({ article }: Props) {
   return (
     <div className="mx-2 p-2 rounded-md mb-6">
       <div className="font-semibold mb-2 bg-black text-white text-xl md:text-2xl">
-        <div className="p-2">{article.title}</div>
+        <div className="py-2 px-5">{article.title}</div>
         {article.media.length > 0 && <Carousel slides={article.media} />}
       </div>
       <div className="text-gray-500 font-semibold uppercase">
