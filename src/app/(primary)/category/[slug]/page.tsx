@@ -18,7 +18,6 @@ export async function generateMetadata({
   params: { slug },
 }: Params): Promise<Metadata> {
   const { category } = await getAllArticlesForCategory(slug, 1);
-  console.log(category);
   const name = !category ? "Not Found" : category.name;
   return {
     title: `${name} | Nagpur News`,
