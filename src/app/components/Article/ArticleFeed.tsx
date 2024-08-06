@@ -3,19 +3,11 @@ import { Article } from "../../../../types";
 import Share from "../shared/Share";
 import { BsShare } from "react-icons/bs";
 
-import dynamic from "next/dynamic";
 import AllTags from "../Tag/AllTags";
 
-const Carousel = dynamic(() => import("../shared/Carousel"), {
-  ssr: false,
-});
+import Carousel from "../shared/Carousel";
 
-const TwitterVideoEmbeded = dynamic(
-  () => import("../shared/TwitterVideoEmbeded"),
-  {
-    ssr: false,
-  }
-);
+import TwitterVideoEmbeded from "../shared/TwitterVideoEmbeded";
 
 type Props = {
   article: Article;
@@ -71,7 +63,7 @@ export default function ArticleFeed({ article }: Props) {
               <Carousel slides={articleSection.media} />
             )}
             <div
-              className="text-[16px] font-light text-primary-800 leading-6 text-justify mb-6 article_feed"
+              className="text-[16px] font-light text-primary-800 leading-6 text-justify my-6 article_feed"
               dangerouslySetInnerHTML={{ __html: articleSection.content }}
             ></div>
           </div>

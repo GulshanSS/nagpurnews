@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 
 const TwitterVideoEmbeded = ({ content }: { content: String }) => {
-  
   const [scriptLoaded, setScriptLoaded] = useState(false);
-  
+
   useEffect(() => {
     const scriptId = "my-twitter-script";
     const loadScript = () => {
@@ -33,7 +32,7 @@ const TwitterVideoEmbeded = ({ content }: { content: String }) => {
   }, []);
 
   if (!scriptLoaded) {
-    return <div>Loading Twitter Script</div>;
+    return <div className="text-sm">Loading Twitter Video</div>;
   }
 
   return (
