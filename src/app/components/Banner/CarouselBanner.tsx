@@ -114,14 +114,6 @@ export default function CarouselBanner({ slides = [] as Article[] }: Props) {
               ))}
           </div>
           <Link href={`/article/${slides[currentIndex].slug}`}>
-            {slides.length > 0 && (
-              <div
-                className="text-[14px] text-white leading-6 font-medium pt-2 line-clamp-div carousel-banner-card"
-                dangerouslySetInnerHTML={{
-                  __html: slides[currentIndex].content,
-                }}
-              ></div>
-            )}
             <div className="flex items-center text-gray-400 text-[12px]">
               <span className="mr-1.5">
                 <CgTimelapse />
