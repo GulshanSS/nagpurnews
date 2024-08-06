@@ -51,13 +51,13 @@ export default async function RootLayout({
         />
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="theme-color" content="#ffffff" />
-        <Script
-          id="ads-google"
-          strategy="afterInteractive"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
-          crossOrigin="anonymous"
-        />
       </Head>
+      <Script
+        id="ads-google"
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
+        crossOrigin="anonymous"
+      />
       <body className={poppins.className}>
         <Navbar />
         <SubNav />
