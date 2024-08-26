@@ -6,8 +6,7 @@ import SubNav from "./components/Navigation/SubNav";
 import Footer from "./components/Footer/Footer";
 import { getAllCategories } from "./lib/category";
 import BottomNav from "./components/shared/BottomNav";
-import Head from "next/head";
-import Script from "next/script";
+import { Html, Head, NextScript } from "next/document";
 
 const poppins = Poppins({ weight: "500", subsets: ["latin-ext"] });
 
@@ -24,7 +23,7 @@ export default async function RootLayout({
   const { categories } = await getAllCategories();
 
   return (
-    <html lang="en">
+    <Html lang="en">
       <Head>
         <link
           rel="apple-touch-icon"
@@ -51,13 +50,12 @@ export default async function RootLayout({
         />
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="theme-color" content="#ffffff" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
-      <Script
-        id="ads-google"
-        strategy="afterInteractive"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5092077595720219"
-        crossOrigin="anonymous"
-      />
       <body className={poppins.className}>
         <Navbar />
         <SubNav />
@@ -66,7 +64,8 @@ export default async function RootLayout({
         </main>
         <Footer />
         <BottomNav categories={categories} />
+        <NextScript />
       </body>
-    </html>
+    </Html>
   );
 }
