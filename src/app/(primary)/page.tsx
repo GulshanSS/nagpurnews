@@ -12,6 +12,8 @@ const BannerFeed = dynamic(() => import("../components/Banner/BannerFeed"), {
 export function generateMetadata(): Metadata {
   return {
     title: "Home | Nagpur News",
+    description:
+      "Stay updated with the latest news, events, and happenings in Nagpur with nagpurnews.live. Your go-to source for real-time local news, breaking stories, and in-depth analysis on what's happening around you",
     alternates: {
       canonical: `https://www.nagpurnews.live`,
     },

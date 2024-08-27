@@ -21,6 +21,7 @@ export async function generateMetadata({
   const name = !category ? "Not Found" : category.name;
   return {
     title: `${name} | Nagpur News`,
+    description: `Explore news related to ${name}. Stay updated with our daily news updates.`,
     alternates: {
       canonical: `https://www.nagpurnews.live/category/${slug}`,
     },

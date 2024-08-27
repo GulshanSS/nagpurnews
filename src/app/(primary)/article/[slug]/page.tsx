@@ -26,6 +26,13 @@ export async function generateMetadata({
 
   return {
     title: article.title,
+    description: article.content.replace(/<[^>]*>/g, ""),
+    authors: [
+      {
+        name: "Team Nagpur News",
+        url: `https://www.nagpurnews.live/article/${slug}`,
+      },
+    ],
     alternates: {
       canonical: `https://www.nagpurnews.live/article/${slug}`,
     },

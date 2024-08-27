@@ -2,7 +2,7 @@ import AllTags from "@/app/components/Tag/AllTags";
 import TagFeed from "@/app/components/Tag/TagFeed";
 import { getAllArticlesForTag, getAllTags } from "@/app/lib/tag";
 import { Metadata } from "next";
-import { Tag } from "../../../../../types";
+import { Tag as TagType } from "../../../../../types";
 
 type Params = {
   params: {
@@ -16,6 +16,7 @@ export async function generateMetadata({
   const { tag } = await getAllArticlesForTag(slug, 1);
   return {
     title: `${tag.name} | Nagpur News`,
+    description: `Find out whats happening under ${tag.name} and stay updated with our daily new update`,
     alternates: {
       canonical: `https://www.nagpurnews.live/category/${slug}`,
     },
@@ -52,7 +53,7 @@ export default async function Tag({ params: { slug } }: Params) {
 
   const newTags =
     typeof tags !== undefined
-      ? [...tags].filter((tag: Tag) => tag.slug !== slug)
+      ? [...tags].filter((tag: TagType) => tag.slug !== slug)
       : [];
 
   return (

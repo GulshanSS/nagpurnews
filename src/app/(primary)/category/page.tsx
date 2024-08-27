@@ -8,6 +8,7 @@ import AllTags from "@/app/components/Tag/AllTags";
 export function generateMetadata(): Metadata {
   return {
     title: "Categories | Nagpur News",
+    description: "Explore various categories and stay updated with our daily news updates",
     alternates: {
       canonical: `https://www.nagpurnews.live/category`,
     },
