@@ -21,7 +21,11 @@ export async function generateMetadata({
   let image = "";
 
   if (article.media.length > 0) {
-    image = `${article.media[0].key}`;
+    image = `${
+      article.media[0].facebookTwitterCardsUrl !== ""
+        ? article.media[0].facebookTwitterCardsUrl
+        : article.media[0].key
+    }`;
   }
 
   return {
@@ -69,8 +73,6 @@ export async function generateMetadata({
         {
           url: image,
           alt: article.tittle,
-          width: 800,
-          height: 600,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
@@ -82,16 +84,12 @@ export async function generateMetadata({
         {
           url: image,
           alt: article.tittle,
-          width: 800,
-          height: 600,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
       videos: [
         {
           url: image,
-          width: 800,
-          height: 600,
           type: article.media.length > 0 ? article.media[0].type : "",
         },
       ],
