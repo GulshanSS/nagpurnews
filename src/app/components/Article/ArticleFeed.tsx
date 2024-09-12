@@ -8,6 +8,7 @@ import AllTags from "../Tag/AllTags";
 import Carousel from "../shared/Carousel";
 
 import TwitterVideoEmbeded from "../shared/TwitterVideoEmbeded";
+import AdBanner from "../Adsense/AdBanner";
 
 type Props = {
   article: Article;
@@ -20,6 +21,11 @@ export default function ArticleFeed({ article }: Props) {
         <div className="py-2 px-5">{article.title}</div>
         {article.media.length > 0 && <Carousel slides={article.media} />}
       </div>
+      <AdBanner
+        dataAdFormat="auto"
+        dataAdSlot="2191647820"
+        dataFullWidthResponsive={true}
+      />
       <div className="text-gray-500 font-semibold uppercase">
         <div className="text-[12px]">
           {article.location},{" "}

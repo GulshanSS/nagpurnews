@@ -6,6 +6,7 @@ import ScrollButton from "../shared/ScrollButton";
 import { getMainFeedArticles } from "@/app/lib/article";
 import Pagination from "../shared/Pagination";
 import SkeletonCard from "../shared/SkeletonCard";
+import AdBanner from "../Adsense/AdBanner";
 
 export default function Feed() {
   const [page, setPage] = useState<number>(1);
@@ -35,6 +36,11 @@ export default function Feed() {
             <ArticleCard key={article.id} article={article} />
           ))}
       </div>
+      <AdBanner
+        dataAdFormat="auto"
+        dataAdSlot="3816570743"
+        dataFullWidthResponsive={true}
+      />
       <div className="mx-auto py-4">
         <Pagination top={500} page={page} pages={pages} changePage={setPage} />
       </div>

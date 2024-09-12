@@ -8,6 +8,7 @@ import ScrollButton from "../shared/ScrollButton";
 import { getAllArticlesForCategory } from "@/app/lib/category";
 import SkeletonCard from "../shared/SkeletonCard";
 import Pagination from "../shared/Pagination";
+import AdBanner from "../Adsense/AdBanner";
 
 type Props = {
   slug: string;
@@ -44,6 +45,11 @@ export default function CategoryFeed({ slug }: Props) {
           <div className="mb-6 font-semibold text-2xl text-primary-800 uppercase">
             {category && category.name}
           </div>
+          <AdBanner
+            dataAdFormat="auto"
+            dataAdSlot="2383219516"
+            dataFullWidthResponsive={true}
+          />
           <div className="w-full flex flex-wrap justify-center lg:justify-start gap-4">
             {category &&
               category.article.map((article) => (

@@ -8,6 +8,7 @@ import SkeletonCard from "../shared/SkeletonCard";
 import { useDebounce } from "usehooks-ts";
 import LatestNewsCard from "../Latest/LatestNewsCard";
 import Pagination from "../shared/Pagination";
+import AdBanner from "../Adsense/AdBanner";
 
 export default function SearchFeed() {
   const [page, setPage] = useState<number>(1);
@@ -80,6 +81,11 @@ export default function SearchFeed() {
             </div>
           )}
         </div>
+        <AdBanner
+          dataAdFormat="auto"
+          dataAdSlot="9260469114"
+          dataFullWidthResponsive={true}
+        />
         {debouncedSearchQuery !== "" && (
           <div className="mx-auto py-4">
             <Pagination
