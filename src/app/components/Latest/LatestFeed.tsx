@@ -13,7 +13,7 @@ function LatestFeed({ articles }: Props) {
       <div className="mx-2 p-2">
         <AdBanner
           dataAdFormat="auto"
-          dataAdSlot="1956694160"
+          dataAdSlot="3816570743"
           dataFullWidthResponsive={true}
         />
         <span className="font-semibold text-2xl text-primary-800 uppercase">

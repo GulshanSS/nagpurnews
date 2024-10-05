@@ -15,7 +15,7 @@ export default function BannerFeed({ articles }: Props) {
         {articles && <CarouselBanner slides={articles} />}
         <AdBanner
           dataAdFormat="auto"
-          dataAdSlot="7843445660"
+          dataAdSlot="2191647820"
           dataFullWidthResponsive={true}
         />
       </div>

@@ -83,7 +83,7 @@ export default function SearchFeed() {
         </div>
         <AdBanner
           dataAdFormat="auto"
-          dataAdSlot="9260469114"
+          dataAdSlot="1956694160"
           dataFullWidthResponsive={true}
         />
         {debouncedSearchQuery !== "" && (

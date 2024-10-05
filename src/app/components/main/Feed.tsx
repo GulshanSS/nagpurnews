@@ -38,7 +38,7 @@ export default function Feed() {
       </div>
       <AdBanner
         dataAdFormat="auto"
-        dataAdSlot="3816570743"
+        dataAdSlot="9260469114"
         dataFullWidthResponsive={true}
       />
       <div className="mx-auto py-4">

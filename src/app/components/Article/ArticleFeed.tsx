@@ -23,7 +23,7 @@ export default function ArticleFeed({ article }: Props) {
       </div>
       <AdBanner
         dataAdFormat="auto"
-        dataAdSlot="2191647820"
+        dataAdSlot="7843445660"
         dataFullWidthResponsive={true}
       />
       <div className="text-gray-500 font-semibold uppercase">
