@@ -53,10 +53,11 @@ export default async function RootLayout({
         <meta name="theme-color" content="#ffffff" />
         <AdSense pId="5092077595720219" />
         <Script
-          async
+          id="gtm-script"
+          strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-ZV02PBT38W"
         />
-        <Script id="google-analytics">
+        <Script id="gtm-inline-script" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
