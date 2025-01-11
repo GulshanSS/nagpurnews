@@ -43,7 +43,7 @@ export default function ArticleCard({ article }: Props) {
             article.media[0].type.startsWith("image/") && (
               <img
                 loading="lazy"
-                className="w-[100px] md:w-[150px] h-24 text-sm  object-cover rounded-md"
+                className="flex-shrink-0 w-[100px] md:w-[150px] h-24 object-contain rounded-md max-w-full"
                 alt={article.title}
                 src={article.media[0].key}
               />
@@ -52,7 +52,7 @@ export default function ArticleCard({ article }: Props) {
             article.media[0].type.startsWith("video/") && (
               <video
                 playsInline
-                className="flex justify-center min-w-[100px] md:min-w-[150px] h-24 bg-black rounded-md"
+                className="flex-shrink-0 min-w-[100px] md:min-w-[150px] h-24 bg-black rounded-md max-w-full"
                 controls
                 loop
                 autoPlay
