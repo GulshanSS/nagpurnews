@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import { getAllCategories } from "./lib/category";
 import BottomNav from "./components/shared/BottomNav";
 import AdSense from "./components/Adsense/AdSense";
+import Script from "next/script";
 
 const poppins = Poppins({ weight: "500", subsets: ["latin-ext"] });
 
@@ -51,6 +52,18 @@ export default async function RootLayout({
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="theme-color" content="#ffffff" />
         <AdSense pId="5092077595720219" />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZV02PBT38W"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZV02PBT38W');
+          `}
+        </Script>
       </head>
       <body className={poppins.className}>
         <Navbar />
