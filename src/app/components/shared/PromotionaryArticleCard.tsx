@@ -69,7 +69,7 @@ export default function PromotionaryArticleCard({
                 link="WebsiteLink"
               />
             ) : null}
-            {promotionaryArticle.contact !== "" ? (
+            {promotionaryArticle.contact && promotionaryArticle.contact !== "" ? (
               <SocialLinkForPromotionaryArticle
                 icon={<BsPhone />}
                 link={`tel:+91${promotionaryArticle.contact}`}

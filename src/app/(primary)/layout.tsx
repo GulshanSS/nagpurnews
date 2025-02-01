@@ -28,12 +28,18 @@ export default async function MainLayout({
   return (
     <>
       <div className="w-full md:w-2/3">{children}</div>
-      <div className="w-full md:w-1/3">
-        {latestArticles && <LatestFeed articles={latestArticles} />}
+      <div className="w-full md:w-1/3 flex flex-col">
+        {latestArticles && (
+          <div className="order-1 md:order-2">
+            <LatestFeed articles={latestArticles} />
+          </div>
+        )}
         {promotionaryArticlesAsBanner && (
-          <PromotionaryArticleFeed
-            promotionaryArticles={promotionaryArticlesAsBanner}
-          />
+          <div className="order-2 md:order-1">
+            <PromotionaryArticleFeed
+              promotionaryArticles={promotionaryArticlesAsBanner}
+            />
+          </div>
         )}
       </div>
     </>
